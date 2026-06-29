@@ -15,6 +15,7 @@
 <style>
   *{box-sizing:border-box}
   body{margin:0;background:#F1F3F7}
+  html{scroll-behavior:smooth}
   a{color:inherit}
   a.bm-obtn:hover{background:#EEF1F4 !important;color:#062654 !important;border-color:#062654 !important;}
   .bm-arrow{display:inline-block;transition:transform .18s ease;}
@@ -41,6 +42,7 @@
     .bm-navlinks{display:none !important;}
     .bm-navcta{display:none !important;}
     .bm-burger{display:flex;margin-left:auto;}
+    [data-navbar] > div{padding-top:10px !important;padding-bottom:10px !important;}
   }
 
   /* ---------- RESPONSIVE ---------- */
@@ -67,7 +69,7 @@
 
   <!-- NAV -->
   <div data-navbar="1" style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid #EEF1F4;transition:transform .3s ease;">
-    <div style="max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;gap:40px;">
+    <div style="max-width:1280px;margin:0 auto;padding:13px 40px;display:flex;align-items:center;gap:40px;">
       <a href="index.html" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.14em;color:#062654;text-decoration:none;white-space:nowrap;">CHAU VU</a>
       <div class="bm-navlinks" style="flex:1;display:flex;justify-content:center;gap:34px;">
         <a href="index.html#work" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#062654;text-decoration:none;border-bottom:2px solid #062654;padding-bottom:3px;">WORK</a>
@@ -324,7 +326,7 @@
         </div>
         <figure style="margin:0;max-width:520px;background:#062654;border:1px solid #E1E6ED;border-radius:6px;padding:0;overflow:hidden;">
           <video id="ki-video" data-autoloop playsinline controls preload="auto" style="display:block;width:100%;height:auto;background:#062654;">
-            <source src="https://one.softfair-apps.de/wp-content/uploads/2025/04/softfair-Berufssuche-kennen-sie-schon-square-1-1-1080x1080-1.mp4" type="video/mp4">
+            <source src="assets/ai-berufssuche.mp4" type="video/mp4">
           </video>
         </figure>
         <p style="margin:18px 0 0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#8B93A1;max-width:520px;">The AI profession search in action — type once, match across insurers.</p>
