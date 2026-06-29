@@ -15,6 +15,8 @@
 <style>
   *{box-sizing:border-box}
   body{margin:0;background:#F1F3F7}
+  @keyframes bm-hero-up{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+  @media (prefers-reduced-motion:reduce){[data-hero-in]{animation:none !important;opacity:1 !important;transform:none !important;}}
   html{scroll-behavior:smooth}
   a{color:inherit}
   a.bm-obtn:hover{background:#EEF1F4 !important;color:#062654 !important;border-color:#062654 !important;}
@@ -93,26 +95,26 @@
     </div>
   </div>
 
-  <div class="bm-overlay" data-overlay>
-    <button data-overlay-close aria-label="Close menu" style="position:absolute;top:22px;right:26px;width:44px;height:44px;background:none;border:none;color:#fff;font-size:32px;line-height:1;cursor:pointer;">&times;</button>
-    <a class="bm-ov-link" data-overlay-link href="#work-projects">WORK</a>
-    <a class="bm-ov-link" data-overlay-link href="#services">SERVICES</a>
-    <a class="bm-ov-link" data-overlay-link href="#insights">ABOUT ME</a>
-    <a class="bm-ov-link" data-overlay-link href="#contact">CONTACT</a>
-    <a data-overlay-link href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="margin-top:16px;font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:15px 30px;text-decoration:none;">LET'S BUILD</a>
+  <div class="bm-overlay" data-overlay="">
+    <button data-overlay-close="" aria-label="Close menu" style="position:absolute;top:22px;right:26px;width:44px;height:44px;background:none;border:none;color:#fff;font-size:32px;line-height:1;cursor:pointer;">×</button>
+    <a class="bm-ov-link" data-overlay-link="" href="#work-projects">WORK</a>
+    <a class="bm-ov-link" data-overlay-link="" href="#services">SERVICES</a>
+    <a class="bm-ov-link" data-overlay-link="" href="#insights">ABOUT ME</a>
+    <a class="bm-ov-link" data-overlay-link="" href="#contact">CONTACT</a>
+    <a data-overlay-link="" href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="margin-top:16px;font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:15px 30px;text-decoration:none;">LET'S BUILD</a>
   </div>
 
   <!-- HERO -->
   <div id="work" style="position:relative;background:#F8F8F6;background-image:linear-gradient(#E7EBF1 1px,transparent 1px),linear-gradient(90deg,#E7EBF1 1px,transparent 1px);background-size:40px 40px;border-bottom:1px solid #EEF1F4;">
     <div style="max-width: 1280px; margin: 0 auto; padding: 90px 40px 80px; min-height: 92vh; display:flex; flex-direction:column; justify-content:center">
       <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:60px;align-items:start;">
-        <h1 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:84px;line-height:0.94;letter-spacing:-0.025em;text-transform:uppercase;color:#062654;">Where engineering meets product craft</h1>
+        <h1 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:84px;line-height:0.94;letter-spacing:-0.025em;text-transform:uppercase;color:#062654;"><span data-hero-in="" style="display:inline-block;opacity:0;animation:bm-hero-up .55s cubic-bezier(.2,.7,.2,1) both;">Where</span> <span data-hero-in="" style="display:inline-block;opacity:0;animation:bm-hero-up .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:.05s;">engineering</span> <span data-hero-in="" style="display:inline-block;opacity:0;animation:bm-hero-up .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:.10s;">meets</span> <span data-hero-in="" style="display:inline-block;opacity:0;animation:bm-hero-up .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:.15s;">product</span> <span data-hero-in="" style="display:inline-block;opacity:0;animation:bm-hero-up .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:.20s;">craft</span></h1>
         <div style="padding-top:10px;">
-          <p style="margin:0 0 28px;font-family:Inter,sans-serif;font-size:16px;line-height:1.65;color:#5F6673;">Chau Vu is a Hamburg product engineer who rebuilds legacy systems into modern products — solid under the hood, clear on the surface.</p>
-          <div style="display:flex;align-items:center;gap:14px;"><span style="width:28px;height:1px;background:#062654;"></span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#062654;">BASED IN HAMBURG</span></div>
+          <p data-hero-in="" style="margin:0 0 28px;font-family:Inter,sans-serif;font-size:16px;line-height:1.65;color:#5F6673;opacity:0;animation:bm-hero-up .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:.30s;">I move fluidly across the stack and the roles around it: engineer, problem-solver, builder.</p>
+          <div data-hero-in="" style="display:flex;align-items:center;gap:14px;opacity:0;animation:bm-hero-up .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:.38s;"><span style="width:28px;height:1px;background:#062654;"></span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#062654;">BASED IN HAMBURG</span></div>
+          <a class="bm-cta-start" data-hero-in="" href="#contact" style="display:inline-flex;align-items:center;gap:50px;margin-top:40px;opacity:0;animation:bm-hero-up .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:.46s;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:15px 24px;text-decoration:none;transition:all .15s;" style-hover="background:#85D4CD;">Let's Talk <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
         </div>
       </div>
-      <a class="bm-obtn" href="#work-projects" style="display:inline-flex;align-self:flex-start;align-items:center;gap:50px;margin-top:56px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#062654;background:#fff;border:1.5px solid #062654;border-radius:2px;padding:15px 24px;text-decoration:none;transition:all .15s;" style-hover="background:#062654;color:#fff;">VIEW MY WORK <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family: &quot;Space Mono&quot;, monospace;">→</span></a>
     </div>
   </div>
 
@@ -127,11 +129,45 @@
 
         <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:56px;align-items:center;">
           <div style="position:relative;">
+            <image-slot id="home-proj-2" style="display:block;width:100%;height:400px;" shape="rect" placeholder="Drop project image" src="https://softfair.one/wp-content/uploads/2023/03/kfz_mockup_impressionen.webp"></image-slot>
+            <span style="position:absolute;top:18px;left:18px;font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;color:#fff;background:#062654;border-radius:3px;padding:7px 12px;">INSURTECH</span>
+          </div>
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">PROJECT 01</div>
+            <h3 style="margin:0 0 18px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-0.01em;color:#062654;">Softfair - Modules</h3>
+            <p style="margin:0 0 26px;font-family:Inter,sans-serif;font-size:16px;line-height:1.6;color:#5F6673;">One system, every insurance module.</p>
+            <div style="background:#F5F7FA;border-left:3px solid #14746F;padding:18px 22px;margin:0 0 28px;display:flex;flex-direction:column;gap:14px;">
+              <div><div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:6px;">INDUSTRY</div><div style="font-family:'Space Mono',monospace;font-size:14px;color:#062654;">InsurTech</div></div>
+              <div><div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:6px;">IMPACT</div><div style="font-family:'Space Mono',monospace;font-size:14px;color:#062654;">Dynamic Roles</div></div>
+            </div>
+            <a class="bm-obtn" href="softfair-modules.html" style="display:flex;justify-content:center;align-items:center;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;border:1.5px solid #062654;border-radius:2px;padding:16px 24px;text-decoration:none;transition:all .15s;" style-hover="background:#062654;color:#fff;">VIEW CASE STUDY</a>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1.55fr;gap:56px;align-items:center;">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">PROJECT 02</div>
+            <h3 style="margin:0 0 18px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-0.01em;color:#062654;">Softfair - Insight</h3>
+            <p style="margin:0 0 26px;font-family:Inter,sans-serif;font-size:16px;line-height:1.6;color:#5F6673;">Data into real decisions.</p>
+            <div style="background:#F5F7FA;border-left:3px solid #14746F;padding:18px 22px;margin:0 0 28px;display:flex;flex-direction:column;gap:14px;">
+              <div><div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:6px;">INDUSTRY</div><div style="font-family:'Space Mono',monospace;font-size:14px;color:#062654;">InsurTech</div></div>
+              <div><div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:6px;">IMPACT</div><div style="font-family:'Space Mono',monospace;font-size:14px;color:#062654;">Dynamic Roles</div></div>
+            </div>
+            <a class="bm-obtn" href="softfair-insight.html" style="display:flex;justify-content:center;align-items:center;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;border:1.5px solid #062654;border-radius:2px;padding:16px 24px;text-decoration:none;transition:all .15s;" style-hover="background:#062654;color:#fff;">VIEW CASE STUDY</a>
+          </div>
+          <div style="position:relative;">
+            <image-slot id="home-proj-3" style="display:block;width:100%;height:400px;" shape="rect" placeholder="Drop project image" src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?auto=format&amp;fit=crop&amp;w=1400&amp;q=70"></image-slot>
+            <span style="position:absolute;top:18px;left:18px;font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;color:#fff;background:#14746F;border-radius:3px;padding:7px 12px;">DATA &amp; ANALYTICS</span>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:56px;align-items:center;">
+          <div style="position:relative;">
             <image-slot id="home-proj-1" style="display:block;width:100%;height:400px;" shape="rect" placeholder="Drop project image" src="assets/jupiter.jpg"></image-slot>
             <span style="position:absolute;top:18px;left:18px;font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;color:#fff;background:#062654;border-radius:3px;padding:7px 12px;">LOGISTICS</span>
           </div>
           <div>
-            <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">PROJECT 01</div>
+            <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">PROJECT 03</div>
             <h3 style="margin:0 0 18px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-0.01em;color:#062654;">Kuehne &amp; Nagel</h3>
             <p style="margin:0 0 26px;font-family:Inter,sans-serif;font-size:16px;line-height:1.6;color:#5F6673;">Five systems, one readable timeline.</p>
             <div style="background:#F5F7FA;border-left:3px solid #14746F;padding:18px 22px;margin:0 0 28px;display:flex;flex-direction:column;gap:14px;">
@@ -142,45 +178,47 @@
           </div>
         </div>
 
-        <div style="display:grid;grid-template-columns:1fr 1.55fr;gap:56px;align-items:center;">
-          <div>
-            <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">PROJECT 02</div>
-            <h3 style="margin:0 0 18px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-0.01em;color:#062654;">Softfair - Modules</h3>
-            <p style="margin:0 0 26px;font-family:Inter,sans-serif;font-size:16px;line-height:1.6;color:#5F6673;">One system, every insurance module.</p>
-            <div style="background:#F5F7FA;border-left:3px solid #14746F;padding:18px 22px;margin:0 0 28px;display:flex;flex-direction:column;gap:14px;">
-              <div><div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:6px;">INDUSTRY</div><div style="font-family:'Space Mono',monospace;font-size:14px;color:#062654;">InsurTech</div></div>
-              <div><div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:6px;">IMPACT</div><div style="font-family:'Space Mono',monospace;font-size:14px;color:#062654;">Dynamic Roles</div></div>
-            </div>
-            <a class="bm-obtn" href="softfair-modules.html" style="display:flex;justify-content:center;align-items:center;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;border:1.5px solid #062654;border-radius:2px;padding:16px 24px;text-decoration:none;transition:all .15s;" style-hover="background:#062654;color:#fff;">VIEW CASE STUDY</a>
-          </div>
-          <div style="position:relative;">
-            <image-slot id="home-proj-2" style="display:block;width:100%;height:400px;" shape="rect" placeholder="Drop project image" src="https://softfair.one/wp-content/uploads/2023/03/kfz_mockup_impressionen.webp"></image-slot>
-            <span style="position:absolute;top:18px;left:18px;font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;color:#fff;background:#062654;border-radius:3px;padding:7px 12px;">INSURTECH</span>
-          </div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:56px;align-items:center;">
-          <div style="position:relative;">
-            <image-slot id="home-proj-3" style="display:block;width:100%;height:400px;" shape="rect" placeholder="Drop project image" src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?auto=format&fit=crop&w=1400&q=70"></image-slot>
-            <span style="position:absolute;top:18px;left:18px;font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;color:#fff;background:#14746F;border-radius:3px;padding:7px 12px;">DATA &amp; ANALYTICS</span>
-          </div>
-          <div>
-            <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">PROJECT 03</div>
-            <h3 style="margin:0 0 18px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-0.01em;color:#062654;">Softfair - Insight</h3>
-            <p style="margin:0 0 26px;font-family:Inter,sans-serif;font-size:16px;line-height:1.6;color:#5F6673;">Data into real decisions.</p>
-            <div style="background:#F5F7FA;border-left:3px solid #14746F;padding:18px 22px;margin:0 0 28px;display:flex;flex-direction:column;gap:14px;">
-              <div><div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:6px;">INDUSTRY</div><div style="font-family:'Space Mono',monospace;font-size:14px;color:#062654;">InsurTech</div></div>
-              <div><div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:6px;">IMPACT</div><div style="font-family:'Space Mono',monospace;font-size:14px;color:#062654;">Dynamic Roles</div></div>
-            </div>
-            <a class="bm-obtn" href="softfair-insight.html" style="display:flex;justify-content:center;align-items:center;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;border:1.5px solid #062654;border-radius:2px;padding:16px 24px;text-decoration:none;transition:all .15s;" style-hover="background:#062654;color:#fff;">VIEW CASE STUDY</a>
-          </div>
-        </div>
-
       </div>
       </sc-if>
 
       <sc-if value="{{ editorial }}">
       <div style="display:flex;flex-direction:column;gap:84px;">
+
+        <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;">
+          <div style="position:relative;">
+            <image-slot id="home-proj-2-ed" style="display:block;width:100%;height:520px;" shape="rounded" radius="4" placeholder="Drop project image" src="https://softfair.one/wp-content/uploads/2023/03/kfz_mockup_impressionen.webp"></image-slot>
+            <div style="position:absolute;left:20px;bottom:20px;display:flex;flex-wrap:wrap;gap:10px;max-width:88%;">
+              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">InsurTech</span>
+              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">Design System</span>
+              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">Angular · .NET</span>
+              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">5 Modules</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#4FBDB4;margin-bottom:20px;">PROJECT 01</div>
+            <h3 style="margin:0 0 22px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:48px;line-height:1.0;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;">Softfair — Modules</h3>
+            <p style="margin:0 0 36px;font-family:Inter,sans-serif;font-size:16px;line-height:1.65;color:#9DB2D6;max-width:430px;">One system, every insurance module — a shared design system and broker-facing features across five comparison modules.</p>
+            <a href="softfair-modules.html" class="bm-cta-ed" style="display:inline-flex;align-items:center;gap:40px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:16px 28px;text-decoration:none;transition:all .15s;" style-hover="background:#85D4CD;">View Case Study <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#4FBDB4;margin-bottom:20px;">PROJECT 02</div>
+            <h3 style="margin:0 0 22px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:48px;line-height:1.0;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;">Softfair — Insight</h3>
+            <p style="margin:0 0 36px;font-family:Inter,sans-serif;font-size:16px;line-height:1.65;color:#9DB2D6;max-width:430px;">Data into real decisions — a Databricks analytics dashboard plus a ground-up Angular frontend rebuild.</p>
+            <a href="softfair-insight.html" class="bm-cta-ed" style="display:inline-flex;align-items:center;gap:40px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:16px 28px;text-decoration:none;transition:all .15s;" style-hover="background:#85D4CD;">View Case Study <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
+          </div>
+          <div style="position:relative;">
+            <image-slot id="home-proj-3-ed" style="display:block;width:100%;height:520px;" shape="rounded" radius="4" placeholder="Drop project image" src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?auto=format&amp;fit=crop&amp;w=1400&amp;q=70"></image-slot>
+            <div style="position:absolute;left:20px;bottom:20px;display:flex;flex-wrap:wrap;gap:10px;max-width:88%;">
+              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">Data &amp; Analytics</span>
+              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">Databricks</span>
+              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">Angular 21</span>
+              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">AI</span>
+            </div>
+          </div>
+        </div>
 
         <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;">
           <div style="position:relative;">
@@ -193,46 +231,10 @@
             </div>
           </div>
           <div>
-            <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#4FBDB4;margin-bottom:20px;">PROJECT 01</div>
+            <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#4FBDB4;margin-bottom:20px;">PROJECT 03</div>
             <h3 style="margin:0 0 22px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:48px;line-height:1.0;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;">Kuehne &amp; Nagel</h3>
             <p style="margin:0 0 36px;font-family:Inter,sans-serif;font-size:16px;line-height:1.65;color:#9DB2D6;max-width:430px;">Five systems, one readable timeline — real-time visibility into cross-system EDI message flows, so stuck messages are found in minutes.</p>
             <a href="kuehne-nagel.html" class="bm-cta-ed" style="display:inline-flex;align-items:center;gap:40px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:16px 28px;text-decoration:none;transition:all .15s;" style-hover="background:#85D4CD;">View Case Study <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
-          </div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;">
-          <div>
-            <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#4FBDB4;margin-bottom:20px;">PROJECT 02</div>
-            <h3 style="margin:0 0 22px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:48px;line-height:1.0;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;">Softfair — Modules</h3>
-            <p style="margin:0 0 36px;font-family:Inter,sans-serif;font-size:16px;line-height:1.65;color:#9DB2D6;max-width:430px;">One system, every insurance module — a shared design system and broker-facing features across five comparison modules.</p>
-            <a href="softfair-modules.html" class="bm-cta-ed" style="display:inline-flex;align-items:center;gap:40px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:16px 28px;text-decoration:none;transition:all .15s;" style-hover="background:#85D4CD;">View Case Study <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
-          </div>
-          <div style="position:relative;">
-            <image-slot id="home-proj-2-ed" style="display:block;width:100%;height:520px;" shape="rounded" radius="4" placeholder="Drop project image" src="https://softfair.one/wp-content/uploads/2023/03/kfz_mockup_impressionen.webp"></image-slot>
-            <div style="position:absolute;left:20px;bottom:20px;display:flex;flex-wrap:wrap;gap:10px;max-width:88%;">
-              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">InsurTech</span>
-              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">Design System</span>
-              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">Angular · .NET</span>
-              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">5 Modules</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;">
-          <div style="position:relative;">
-            <image-slot id="home-proj-3-ed" style="display:block;width:100%;height:520px;" shape="rounded" radius="4" placeholder="Drop project image" src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?auto=format&fit=crop&w=1400&q=70"></image-slot>
-            <div style="position:absolute;left:20px;bottom:20px;display:flex;flex-wrap:wrap;gap:10px;max-width:88%;">
-              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">Data &amp; Analytics</span>
-              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">Databricks</span>
-              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">Angular 21</span>
-              <span style="font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(6,38,84,0.62);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.5);padding:9px 14px;">AI</span>
-            </div>
-          </div>
-          <div>
-            <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#4FBDB4;margin-bottom:20px;">PROJECT 03</div>
-            <h3 style="margin:0 0 22px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:48px;line-height:1.0;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;">Softfair — Insight</h3>
-            <p style="margin:0 0 36px;font-family:Inter,sans-serif;font-size:16px;line-height:1.65;color:#9DB2D6;max-width:430px;">Data into real decisions — a Databricks analytics dashboard plus a ground-up Angular frontend rebuild.</p>
-            <a href="softfair-insight.html" class="bm-cta-ed" style="display:inline-flex;align-items:center;gap:40px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:16px 28px;text-decoration:none;transition:all .15s;" style-hover="background:#85D4CD;">View Case Study <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
           </div>
         </div>
 
@@ -337,9 +339,9 @@
         <h2 style="margin:0 0 22px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1.05;letter-spacing:-0.01em;text-transform:uppercase;color:#fff;">Let's build something that lasts.</h2>
         <p style="margin:0 0 30px;font-family:Inter,sans-serif;font-size:15px;line-height:1.6;color:#9DB2D6;max-width:420px;">Have a legacy system that needs a second life, or a new product to get right the first time? Let's talk.</p>
         <div style="display:flex;flex-direction:column;gap:12px;">
-          <div style="display:flex;align-items:center;gap:12px;font-family:Inter,sans-serif;font-size:14px;color:#fff;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-size:11px;">✉</span> chauvu8080@gmail.com</div>
+          <div style="display:flex;align-items:center;gap:12px;font-family:Inter,sans-serif;font-size:14px;color:#fff;"><span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: #4FBDB4; color: #062654; border-radius: 3px; font-size: 15px">✉</span> chauvu8080@gmail.com</div>
           <div style="display:flex;align-items:center;gap:12px;font-family:Inter,sans-serif;font-size:14px;color:#fff;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-size:11px;">☎</span> +49 179 4195 394</div>
-          <a href="https://www.linkedin.com/in/chau-vu-18031997/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;font-family:Inter,sans-serif;font-size:14px;color:#fff;text-decoration:none;" style-hover="color:#4FBDB4;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-family:Inter,sans-serif;font-weight:700;font-size:10px;">in</span> linkedin.com/in/chau-vu-18031997</a>
+          <a href="https://www.linkedin.com/in/chau-vu-18031997/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;font-family:Inter,sans-serif;font-size:14px;color:#fff;text-decoration:none;" style-hover="color:#4FBDB4;"><span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: rgb(79, 189, 180); color: rgb(6, 38, 84); border-radius: 3px; font-family: Inter, sans-serif; font-weight: 700; font-size: 10px;">in</span>chau-vu</a>
         </div>
       </div>
       <a class="bm-cta-start" href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="display:inline-flex;align-items:center;gap:50px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:17px 26px;text-decoration:none;white-space:nowrap;transition:all .15s;" style-hover="background:#85D4CD;">LET'S START A PROJECT <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
@@ -357,7 +359,7 @@
     </div>
   </div>
 
-</div>
+
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;editorialLayout&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Selected Projects&quot;}}">
 class Component extends DCLogic {
@@ -368,6 +370,26 @@ class Component extends DCLogic {
       burger.addEventListener('click', () => overlay.classList.add('open'));
       overlay.querySelectorAll('[data-overlay-close],[data-overlay-link]').forEach(el =>
         el.addEventListener('click', () => overlay.classList.remove('open')));
+    }
+    // ---- Parallax grid: hero gridlines drift opposite to the cursor ----
+    const hero = document.querySelector('#work');
+    if (hero && !window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+      hero.style.transition = 'background-position .5s cubic-bezier(.2,.7,.2,1)';
+      const MAX = 14;
+      let raf = null;
+      this._onHeroMove = (e) => {
+        if (raf) return;
+        raf = window.requestAnimationFrame(() => {
+          raf = null;
+          const r = hero.getBoundingClientRect();
+          const gx = ((e.clientX - r.left) / r.width - 0.5) * -2 * MAX;
+          const gy = ((e.clientY - r.top) / r.height - 0.5) * -2 * MAX;
+          hero.style.backgroundPosition = gx.toFixed(1) + 'px ' + gy.toFixed(1) + 'px';
+        });
+      };
+      this._onHeroLeave = () => { hero.style.backgroundPosition = '0px 0px'; };
+      hero.addEventListener('mousemove', this._onHeroMove, { passive: true });
+      hero.addEventListener('mouseleave', this._onHeroLeave, { passive: true });
     }
     const start = () => {
     const scope = document;
@@ -422,6 +444,11 @@ class Component extends DCLogic {
     if (this._onScroll) {
       window.removeEventListener('scroll', this._onScroll);
       window.removeEventListener('resize', this._onScroll);
+    }
+    const hero = document.querySelector('#work');
+    if (hero) {
+      if (this._onHeroMove) hero.removeEventListener('mousemove', this._onHeroMove);
+      if (this._onHeroLeave) hero.removeEventListener('mouseleave', this._onHeroLeave);
     }
   }
 
