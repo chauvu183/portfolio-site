@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#062654"/><text x="50" y="50" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="32" fill="#ffffff" letter-spacing="2">CV</text></svg></template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#F1F3F7}
+  a{color:inherit}
+  a.bm-obtn:hover{background:#EEF1F4 !important;color:#062654 !important;border-color:#062654 !important;}
+  .bm-arrow{display:inline-block;transition:transform .18s ease;}
+  a:hover .bm-arrow,button:hover .bm-arrow{transform:translateX(6px);}
+  a.bm-more:hover{border-color:#062654 !important;background:#F8F8F6 !important;}
+  a.bm-cta:hover{background:#14457A !important;}
+  a.bm-cta-start:hover{background:#85D4CD !important;}
+  a.bm-hcard:hover{border-color:rgba(255,255,255,0.55) !important;background:rgba(255,255,255,0.06) !important;}
+  /* ---- MOBILE NAV (overlay) ---- */
+  .bm-burger{display:none;border:none;background:none;cursor:pointer;padding:0;width:44px;height:44px;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+  .bm-burger span{display:block;width:22px;height:2px;background:#062654;border-radius:2px;}
+  .bm-overlay{position:fixed;inset:0;z-index:200;background:#062654;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;transform:translateY(-100%);visibility:hidden;transition:transform .42s cubic-bezier(.4,0,.2,1),visibility .42s;}
+  .bm-overlay.open{transform:translateY(0);visibility:visible;}
+  .bm-overlay > *{opacity:0;transition:opacity .35s ease;}
+  .bm-overlay.open > *{opacity:1;}
+  .bm-overlay.open > *:nth-child(2){transition-delay:.14s;}
+  .bm-overlay.open > *:nth-child(3){transition-delay:.20s;}
+  .bm-overlay.open > *:nth-child(4){transition-delay:.26s;}
+  .bm-overlay.open > *:nth-child(5){transition-delay:.32s;}
+  .bm-overlay.open > *:nth-child(6){transition-delay:.38s;}
+  .bm-ov-link{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;letter-spacing:0.02em;color:#fff;text-decoration:none;transition:color .15s,opacity .35s ease;}
+  .bm-ov-link:hover{color:#4FBDB4;}
+  @media (max-width:760px){
+    .bm-navlinks{display:none !important;}
+    .bm-navcta{display:none !important;}
+    .bm-burger{display:flex;margin-left:auto;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    div[style*="grid-template-columns"]{ grid-template-columns:1fr !important; }
+    div[style*="max-width: 1280px"]{ padding-left:22px !important; padding-right:22px !important; }
+    h1{ font-size:clamp(32px,9vw,48px) !important; line-height:1.04 !important; }
+    h2{ font-size:clamp(24px,6.5vw,34px) !important; }
+    h3{ font-size:clamp(22px,5.5vw,32px) !important; }
+    span[style*="font-size: 58px"]{ font-size:40px !important; }
+    div[style*="justify-content: space-between"]{ flex-wrap:wrap !important; gap:14px; }
+    div[style*="gap: 40px"]{ flex-wrap:wrap !important; gap:14px !important; }
+    div[style*="gap: 34px"]{ order:3 !important; flex-basis:100% !important; justify-content:center !important; flex-wrap:wrap !important; gap:16px 18px !important; }
+  }
+  @media (max-width: 560px){
+    div[style*="max-width: 1280px"]{ padding-top:48px !important; padding-bottom:48px !important; }
+    a[style*="gap: 50px"]{ gap:24px !important; }
+  }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="background:#FFFFFF;font-family:Inter,system-ui,sans-serif;color:#111827;">
+
+  <!-- NAV -->
+  <div data-navbar="1" style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid #EEF1F4;transition:transform .3s ease;">
+    <div style="max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;gap:40px;">
+      <a href="index.html" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.14em;color:#062654;text-decoration:none;white-space:nowrap;">CHAU VU</a>
+      <div class="bm-navlinks" style="flex:1;display:flex;justify-content:center;gap:34px;">
+        <a href="index.html#work" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#062654;text-decoration:none;border-bottom:2px solid #062654;padding-bottom:3px;">WORK</a>
+        <a href="index.html#services" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#8B93A1;text-decoration:none;" style-hover="color:#062654;">SERVICES</a>
+        <a href="index.html#insights" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#8B93A1;text-decoration:none;" style-hover="color:#062654;">ABOUT ME</a>
+        <a href="index.html#contact" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#8B93A1;text-decoration:none;" style-hover="color:#062654;">CONTACT</a>
+      </div>
+      <a class="bm-cta bm-navcta" href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#fff;background:#062654;border-radius:2px;padding:11px 20px;text-decoration:none;white-space:nowrap;transition:all .15s;" style-hover="background:#14457A;">LET'S BUILD</a>
+      <button class="bm-burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <div class="bm-overlay" data-overlay>
+    <button data-overlay-close aria-label="Close menu" style="position:absolute;top:22px;right:26px;width:44px;height:44px;background:none;border:none;color:#fff;font-size:32px;line-height:1;cursor:pointer;">&times;</button>
+    <a class="bm-ov-link" data-overlay-link href="index.html#work">WORK</a>
+    <a class="bm-ov-link" data-overlay-link href="index.html#services">SERVICES</a>
+    <a class="bm-ov-link" data-overlay-link href="index.html#insights">ABOUT ME</a>
+    <a class="bm-ov-link" data-overlay-link href="index.html#contact">CONTACT</a>
+    <a data-overlay-link href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="margin-top:16px;font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:15px 30px;text-decoration:none;">LET'S BUILD</a>
+  </div>
+
+  <!-- HERO (NAVY) -->
+  <div style="position:relative;background-color:#062654;background-image:linear-gradient(rgba(6,38,84,0.90),rgba(6,38,84,0.82)),url('https://images.unsplash.com/photo-1579567761406-4684ee0c75b6?auto=format&amp;fit=crop&amp;w=2000&amp;q=70');background-size:cover;background-position:center;">
+    <div style="max-width:1280px;margin:0 auto;padding:48px 40px 70px;min-height:92vh;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#9DB2D6;margin-bottom:44px;">WORK&nbsp;&nbsp;/&nbsp;&nbsp;PROJECTS&nbsp;&nbsp;/&nbsp;&nbsp;SOFTFAIR INSIGHTS</div>
+      <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:start;">
+        <div>
+          <span style="display:inline-block;font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.35);border-radius:3px;padding:7px 12px;margin-bottom:28px;">Data &amp; Modernization</span>
+          <h1 style="margin:0 0 26px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:50px;line-height:1.02;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;">softfair Insights: Analytics Platform</h1>
+          <p style="margin:0;font-family:Inter,sans-serif;font-size:16px;line-height:1.65;color:#9DB2D6;max-width:480px;">Two distinct workstreams on softfair's internal Insights platform — a Databricks analytics dashboard that turns Jira data into real-time delivery metrics, and a ground-up rebuild of the platform's Angular frontend.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px 24px;padding-top:8px;">
+          <div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#6E89B5;margin-bottom:10px;">CLIENT</div><div style="font-family:Inter,sans-serif;font-size:14px;color:#fff;">softfair GmbH (KRAKE / Big Data)</div></div>
+          <div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#6E89B5;margin-bottom:10px;">ROLE</div><div style="font-family:Inter,sans-serif;font-size:14px;color:#fff;">Software Engineer (Frontend &amp; Data)</div></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;margin-top:54px;flex-wrap:wrap;">
+        <a class="bm-hcard" href="#track-01" style="display:flex;flex-direction:column;gap:8px;flex:1;min-width:280px;border:1px solid rgba(255,255,255,0.18);border-radius:4px;padding:22px 26px;text-decoration:none;transition:all .15s;" style-hover="border-color:rgba(255,255,255,0.5);">
+          <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#4FBDB4;">CASE STUDY 01 — MODERNIZATION</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;">Insights Frontend Rebuild</span>
+        </a>
+        <a class="bm-hcard" href="#track-02" style="display:flex;flex-direction:column;gap:8px;flex:1;min-width:280px;border:1px solid rgba(255,255,255,0.18);border-radius:4px;padding:22px 26px;text-decoration:none;transition:all .15s;" style-hover="border-color:rgba(255,255,255,0.5);">
+          <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#4FBDB4;">CASE STUDY 02 — DATA</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;">Jira Analytics Dashboard</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TRACK 02 — MODERNIZATION ============ -->
+  <div id="track-01" style="background:#fff;border-bottom:1px solid #EEF1F4;scroll-margin-top:80px;">
+    <div style="max-width:1280px;margin:0 auto;padding:70px 40px 0;">
+      <div style="display:flex;align-items:baseline;gap:20px;border-bottom:1px solid #EEF1F4;padding-bottom:30px;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:58px;line-height:1;color:#E1E6ED;">01</span>
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.2em;color:#14746F;margin-bottom:8px;">MODERNIZATION</div>
+          <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.01em;color:#062654;">Insights Frontend Rebuild</h2>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;color:#8B93A1;margin-top:8px;">Angular 21 · Design Tokens · Storybook · Cypress · Solo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 · CHALLENGE -->
+    <div style="background:#F8F8F6;background-image:linear-gradient(#EBEEF3 1px,transparent 1px),linear-gradient(90deg,#EBEEF3 1px,transparent 1px);background-size:40px 40px;border-bottom:1px solid #EEF1F4;">
+      <div style="max-width:1280px;margin:0 auto;padding:70px 40px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-bottom:48px;">
+          <div>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;"><span style="width:24px;height:1px;background:#062654;"></span><span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.18em;color:#062654;">THE CHALLENGE</span></div>
+            <h3 style="margin:0 0 26px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;line-height:1.1;letter-spacing:-0.01em;color:#062654;">A frontend nobody wanted to touch</h3>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#5F6673;">The Angular app meant to surface all of this was a liability: a flat codebase with no separation of concerns (components, services and DTOs mixed together) and no design system. Every change was slow, risky and visually inconsistent.</p>
+          </div>
+          <div style="background:#fff;border:1px solid #E1E6ED;border-radius:4px;padding:26px 28px;align-self:start;">
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:16px;">IMPACT AT A GLANCE</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;line-height:1.15;color:#14746F;margin-bottom:14px;">Flat codebase → modular architecture</div>
+            <div style="font-family:Inter,sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#5F6673;line-height:1.5;">Full frontend rebuild, solo</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+          <span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.18em;color:#062654;">DRAG TO COMPARE</span>
+          <span style="flex:1;height:1px;background:#D8DEE8;"></span>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#8B93A1;">BEFORE → AFTER</span>
+        </div>
+        <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:6px;overflow:hidden;border:1px solid #C4CAD4;background:#0d1117;user-select:none;box-shadow:0 8px 30px rgba(6,38,84,0.12);">
+          <img src="assets/insights-after.png" alt="Rebuilt Insights frontend" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;display:block;">
+          <div style="position:absolute;top:14px;right:16px;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.14em;color:#062654;background:#4FBDB4;border-radius:3px;padding:6px 11px;">AFTER · REBUILT</div>
+          <div style="position:absolute;inset:0;clip-path:inset(0 {{ rightInset }}% 0 0);">
+            <img src="assets/insights-before.png" alt="Old Insights frontend" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;display:block;">
+            <div style="position:absolute;top:14px;left:16px;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.14em;color:#fff;background:rgba(15,23,42,0.78);border-radius:3px;padding:6px 11px;">BEFORE · FLAT</div>
+          </div>
+          <div style="position:absolute;top:0;bottom:0;left:{{ pos }}%;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,0.12);transform:translateX(-1px);pointer-events:none;">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;color:#062654;font-family:'Space Mono',monospace;font-size:15px;font-weight:700;">↔</div>
+          </div>
+          <input type="range" min="0" max="100" defaultValue="50" oninput="{{ onInput }}" aria-label="Compare before and after" style="position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;">
+        </div>
+        <p style="margin:16px 0 0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#8B93A1;">Same module, rebuilt — from a flat, inconsistent UI to a token-driven design system with a clear visual hierarchy.</p>
+      </div>
+    </div>
+
+    <!-- 02 · CONTRIBUTION -->
+    <div style="background:#fff;">
+      <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">MY CONTRIBUTION</div>
+        <h3 style="margin:0 0 50px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.01em;color:#062654;">Rebuilding the architecture and the system on top</h3>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+          <div style="padding-right:32px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">01</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Architecture</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Restructured the flat app into modules.</p>
+          </div>
+          <div style="padding-right:32px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">02</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Modern Angular</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Standalone bootstrapping with lazy-loaded routes.</p>
+          </div>
+          <div style="padding-right:32px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">03</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Design System</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Built tokens, M3 theme and components.</p>
+          </div>
+          <div>
+            <div style="margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">04</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Quality</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Stabilized Cypress tests; made UI responsive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 · OUTCOME + FEATURES -->
+    <div style="background:#fff;border-bottom:1px solid #EEF1F4;">
+      <div style="max-width:1280px;margin:0 auto;padding:0 40px 74px;">
+        <div style="background:#062654;border-radius:6px;padding:40px 44px;margin-bottom:54px;">
+          <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#9DB2D6;margin-bottom:18px;">OUTCOME</div>
+          <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:23px;line-height:1.4;color:#fff;max-width:900px;">A modern, token-driven Angular frontend that's finally fast and consistent to extend — proving the new system scales beyond its original scope.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 · SPECS -->
+    <div style="background:#F8F8F6;border-bottom:1px solid #EEF1F4;">
+      <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:40px;">TECHNICAL SPECS</div>
+        <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;">
+          <div style="border:1px solid #E1E6ED;border-radius:4px;overflow:hidden;background:#fff;">
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Frontend</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">Angular 21 · TypeScript · Signal</div></div>
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"></div>
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Design System</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">M3 theme · tokens · Storybook component library</div></div>
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Testing</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">Cypress (Component,E2E) · CI pipeline stabilization</div></div>
+          </div>
+          <div style="border:1px solid #E1E6ED;border-radius:4px;padding:34px 32px;background:#fff;background-image:linear-gradient(#EBEEF3 1px,transparent 1px),linear-gradient(90deg,#EBEEF3 1px,transparent 1px);background-size:28px 28px;">
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <div>
+                <div style="font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:0.16em;color:#8B93A1;margin-bottom:8px;">BEFORE</div>
+                <div style="background:#fff;border:1px dashed #C4CAD4;border-radius:3px;padding:13px 14px;font-family:'Space Mono',monospace;font-size:11px;color:#8B93A1;">flat src/ — components · services · DTOs all mixed</div>
+              </div>
+              <div style="text-align:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:15px;line-height:1;">↓</div>
+              <div>
+                <div style="font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:0.16em;color:#14746F;margin-bottom:8px;">AFTER</div>
+                <div style="display:flex;gap:6px;">
+                  <div style="flex:1;background:#062654;border-radius:3px;padding:11px 4px;text-align:center;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;color:#fff;">CORE</div>
+                  <div style="flex:1;background:#062654;border-radius:3px;padding:11px 4px;text-align:center;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;color:#fff;">SHARED</div>
+                  <div style="flex:1;background:#062654;border-radius:3px;padding:11px 4px;text-align:center;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;color:#fff;">FEATURES</div>
+                  <div style="flex: 1; border-radius: 3px; padding: 11px 4px; text-align: center; font-family: 'Space Mono',monospace; font-size: 9px; font-weight: 700; color: #fff; background-color: #062654">ROUTING</div>
+                  <div style="flex: 1; border-radius: 3px; padding: 11px 4px; text-align: center; font-family: 'Space Mono',monospace; font-size: 9px; font-weight: 700; color: #fff; background-color: #062654">STATE</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TRACK 01 — DATA ============ -->
+  <div id="track-02" style="background:#fff;border-bottom:1px solid #EEF1F4;scroll-margin-top:80px;">
+    <div style="max-width:1280px;margin:0 auto;padding:70px 40px 0;">
+      <div style="display:flex;align-items:baseline;gap:20px;border-bottom:1px solid #EEF1F4;padding-bottom:30px;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:58px;line-height:1;color:#E1E6ED;">02</span>
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.2em;color:#14746F;margin-bottom:8px;">DATA &amp; ANALYTICS</div>
+          <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.01em;color:#062654;">Jira Analytics Dashboard</h2>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;color:#8B93A1;margin-top:8px;">Databricks Lakeview · SQL · Fivetran · Delta Lake</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 01 · CHALLENGE -->
+    <div style="background:#F8F8F6;background-image:linear-gradient(#EBEEF3 1px,transparent 1px),linear-gradient(90deg,#EBEEF3 1px,transparent 1px);background-size:40px 40px;border-bottom:1px solid #EEF1F4;margin-top:0;">
+      <div style="max-width:1280px;margin:0 auto;padding:70px 40px;display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;"><span style="width:24px;height:1px;background:#062654;"></span><span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.18em;color:#062654;">THE CHALLENGE</span></div>
+          <h3 style="margin:0 0 26px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;line-height:1.1;letter-spacing:-0.01em;color:#062654;">Delivery decisions made on gut feel</h3>
+          <p style="margin:0 0 34px;font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#5F6673;">Leadership had no objective view of how the engineering team actually delivered. Velocity, cycle time and technical debt lived as scattered, manual guesses inside Jira — impossible to track over time or act on with confidence.</p>
+          <div style="background:#fff;border:1px solid #E1E6ED;border-radius:4px;padding:26px 28px;">
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:16px;">IMPACT AT A GLANCE</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:42px;line-height:1;color:#14746F;margin-bottom:14px;">7</div>
+            <div style="font-family:Inter,sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#5F6673;line-height:1.5;">Dashboard pages · 18 datasets · 30+ live visualizations</div>
+          </div>
+        </div>
+        <image-slot id="p3-t1-challenge" style="display:block;width:100%;height:430px;" shape="rounded" radius="6" placeholder="Drop dashboard screenshot" src="assets/jira-dashboard.png"></image-slot>
+      </div>
+    </div>
+
+    <!-- 01 · CONTRIBUTION -->
+    <div style="background:#fff;">
+      <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">MY CONTRIBUTION</div>
+        <h3 style="margin:0 0 50px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.01em;color:#062654;">Modeling the data, then making it legible</h3>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+          <div style="padding-right:32px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">01</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Data Modeling</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Modeled Jira data into clean datasets.</p>
+          </div>
+          <div style="padding-right:32px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">02</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Custom Metrics</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Built cycle-time and velocity metrics in SQL.</p>
+          </div>
+          <div style="padding-right:32px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">03</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Dashboard</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Built a 7-page interactive Lakeview dashboard.</p>
+          </div>
+          <div>
+            <div style="margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">04</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Adoption</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Metrics used in retros and planning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 01 · OUTCOME + FEATURES -->
+    <div style="background:#fff;border-bottom:1px solid #EEF1F4;">
+      <div style="max-width:1280px;margin:0 auto;padding:0 40px 74px;">
+        <div style="background:#062654;border-radius:6px;padding:40px 44px;margin-bottom:54px;">
+          <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#9DB2D6;margin-bottom:18px;">OUTCOME</div>
+          <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:23px;line-height:1.4;color:#fff;max-width:900px;">We turned messy Jira data into one live dashboard, so we can improve our process based on real numbers — not gut feeling</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 01 · SPECS -->
+    <div style="background:#F8F8F6;border-bottom:1px solid #EEF1F4;">
+      <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:40px;">TECHNICAL SPECS</div>
+        <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;">
+          <div style="border:1px solid #E1E6ED;border-radius:4px;overflow:hidden;background:#fff;">
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Data &amp; BI</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">Databricks Lakeview · SQL · Delta Lake</div></div>
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Source</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">Fivetran-synced Jira data</div></div>
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Output</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">7-page interactive dashboard · 30+ visualizations</div></div>
+          </div>
+          <div style="border:1px solid #E1E6ED;border-radius:4px;padding:38px 32px;background:#fff;background-image:linear-gradient(#EBEEF3 1px,transparent 1px),linear-gradient(90deg,#EBEEF3 1px,transparent 1px);background-size:28px 28px;">
+            <div style="display:flex;align-items:stretch;gap:8px;">
+              <div style="flex: 1; background: #fff; border: 1px solid #C4CAD4; border-radius: 3px; padding: 13px 6px; text-align: center; font-family: 'Space Mono',monospace; font-size: 11px; font-weight: 700; color: #062654; border-style: dashed">JIRA</div>
+              <div style="display:flex;align-items:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:13px;">→</div>
+              <div style="flex: 1; background: #fff; border: 1px solid #C4CAD4; border-radius: 3px; padding: 13px 6px; text-align: center; font-family: 'Space Mono',monospace; font-size: 11px; font-weight: 700; color: #062654; border-style: dashed">FIVETRAN</div>
+              <div style="display:flex;align-items:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:13px;">→</div>
+              <div style="flex: 1.3; background: #fff; border: 1px dashed #93AECF; border-radius: 3px; padding: 9px 6px; text-align: center; border-style: solid"><div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#062654;">DATABRICKS</div><div style="font-family:'Space Mono',monospace;font-size:8px;color:#8B93A1;margin-top:3px;">DELTA · SQL</div></div>
+              <div style="display:flex;align-items:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:13px;">→</div>
+              <div style="flex:1.2;background:#14746F;border-radius:3px;padding:13px 6px;text-align:center;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#fff;">DASHBOARD</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MORE PROJECTS -->
+  <div style="background:#fff;border-bottom:1px solid #EEF1F4;">
+    <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:36px;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;letter-spacing:0.16em;color:#062654;">MORE PROJECTS</span>
+        <span style="flex:1;height:1px;background:#E1E6ED;"></span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <a class="bm-more" href="kuehne-nagel.html" style="display:flex;justify-content:space-between;align-items:center;border:1px solid #E0E5EE;border-radius:4px;padding:26px 28px;text-decoration:none;transition:all .15s;">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#8B93A1;margin-bottom:10px;">PROJECT 01</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;color:#062654;">Kuehne &amp; Nagel</div>
+          </div>
+          <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;font-size:20px;color:#062654;">→</span>
+        </a>
+        <a class="bm-more" href="softfair-modules.html" style="display:flex;justify-content:space-between;align-items:center;border:1px solid #E0E5EE;border-radius:4px;padding:26px 28px;text-decoration:none;transition:all .15s;">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#8B93A1;margin-bottom:10px;">PROJECT 02</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;color:#062654;">Softfair - Modules</div>
+          </div>
+          <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;font-size:20px;color:#062654;">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div id="project-cta" style="position:relative;background:#062654;overflow:hidden;">
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:64px 40px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;">
+      <div>
+        <h2 style="margin:0 0 18px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:38px;line-height:1.05;letter-spacing:-0.01em;text-transform:uppercase;color:#fff;">Let's build something that lasts.</h2>
+        <p style="margin:0 0 24px;font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#9DB2D6;max-width:400px;">Need to turn scattered data into decisions — and a legacy frontend into a modern one? I do both.</p>
+        <div style="display:flex;gap:30px;">
+          <div style="display:flex;align-items:center;gap:10px;font-family:Inter,sans-serif;font-size:13px;color:#fff;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-size:11px;">✉</span> chauvu8080@gmail.com</div>
+          <div style="display:flex;align-items:center;gap:10px;font-family:Inter,sans-serif;font-size:13px;color:#fff;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-size:11px;">☎</span> +49 179 4195 394</div>
+          <a href="https://www.linkedin.com/in/chau-vu-18031997/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;font-family:Inter,sans-serif;font-size:13px;color:#fff;text-decoration:none;" style-hover="color:#4FBDB4;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-family:Inter,sans-serif;font-weight:700;font-size:10px;">in</span> LinkedIn</a>
+        </div>
+      </div>
+      <a class="bm-cta-start" href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="display:inline-flex;align-items:center;gap:50px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:17px 26px;text-decoration:none;white-space:nowrap;transition:all .15s;" style-hover="background:#85D4CD;">LET'S START A PROJECT <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.14);">
+      <div style="max-width:1280px;margin:0 auto;padding:22px 40px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;">© 2026 CHAU VU. ALL RIGHTS RESERVED. · HAMBURG, GERMANY</span>
+        <div style="display:flex;gap:28px;">
+          <a href="https://www.linkedin.com/in/chau-vu-18031997/" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;text-decoration:none;" style-hover="color:#fff;">LINKEDIN</a>
+          <a href="#" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;text-decoration:none;" style-hover="color:#fff;">IMPRINT</a>
+          <a href="#" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;text-decoration:none;" style-hover="color:#fff;">PRIVACY</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { pos: 50 };
+  componentDidMount() {
+    const burger = document.querySelector('.bm-burger');
+    const overlay = document.querySelector('[data-overlay]');
+    if (burger && overlay) {
+      burger.addEventListener('click', () => overlay.classList.add('open'));
+      overlay.querySelectorAll('[data-overlay-close],[data-overlay-link]').forEach(el =>
+        el.addEventListener('click', () => overlay.classList.remove('open')));
+    }
+    const nav = document.querySelector('[data-navbar]');
+    if (!nav) return;
+    let lastY = window.scrollY;
+    this._onScroll = () => {
+      const y = window.scrollY;
+      if (y <= 10 || y > lastY) nav.style.transform = 'translateY(0)';
+      else if (y < lastY) nav.style.transform = 'translateY(-100%)';
+      lastY = y;
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+  }
+  componentWillUnmount() { if (this._onScroll) window.removeEventListener('scroll', this._onScroll); }
+  renderVals() {
+    const pos = this.state.pos;
+    return {
+      pos,
+      rightInset: 100 - pos,
+      onInput: (e) => this.setState({ pos: Number(e.target.value) }),
+    };
+  }
+}
+</script>
+</body>
+</html>

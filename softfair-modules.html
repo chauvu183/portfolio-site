@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#062654"/><text x="50" y="50" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="32" fill="#ffffff" letter-spacing="2">CV</text></svg></template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#F1F3F7}
+  a{color:inherit}
+  a.bm-obtn:hover{background:#EEF1F4 !important;color:#062654 !important;border-color:#062654 !important;}
+  .bm-arrow{display:inline-block;transition:transform .18s ease;}
+  a:hover .bm-arrow,button:hover .bm-arrow{transform:translateX(6px);}
+  a.bm-more:hover{border-color:#062654 !important;background:#F8F8F6 !important;}
+  a.bm-cta:hover{background:#14457A !important;}
+  a.bm-cta-start:hover{background:#85D4CD !important;}
+  a.bm-hcard:hover{border-color:rgba(255,255,255,0.55) !important;background:rgba(255,255,255,0.06) !important;}
+  /* ---- MOBILE NAV (overlay) ---- */
+  .bm-burger{display:none;border:none;background:none;cursor:pointer;padding:0;width:44px;height:44px;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+  .bm-burger span{display:block;width:22px;height:2px;background:#062654;border-radius:2px;}
+  .bm-overlay{position:fixed;inset:0;z-index:200;background:#062654;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;transform:translateY(-100%);visibility:hidden;transition:transform .42s cubic-bezier(.4,0,.2,1),visibility .42s;}
+  .bm-overlay.open{transform:translateY(0);visibility:visible;}
+  .bm-overlay > *{opacity:0;transition:opacity .35s ease;}
+  .bm-overlay.open > *{opacity:1;}
+  .bm-overlay.open > *:nth-child(2){transition-delay:.14s;}
+  .bm-overlay.open > *:nth-child(3){transition-delay:.20s;}
+  .bm-overlay.open > *:nth-child(4){transition-delay:.26s;}
+  .bm-overlay.open > *:nth-child(5){transition-delay:.32s;}
+  .bm-overlay.open > *:nth-child(6){transition-delay:.38s;}
+  .bm-ov-link{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;letter-spacing:0.02em;color:#fff;text-decoration:none;transition:color .15s,opacity .35s ease;}
+  .bm-ov-link:hover{color:#4FBDB4;}
+  @media (max-width:760px){
+    .bm-navlinks{display:none !important;}
+    .bm-navcta{display:none !important;}
+    .bm-burger{display:flex;margin-left:auto;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    div[style*="grid-template-columns"]{ grid-template-columns:1fr !important; }
+    div[style*="max-width: 1280px"]{ padding-left:22px !important; padding-right:22px !important; }
+    h1{ font-size:clamp(32px,9vw,48px) !important; line-height:1.04 !important; }
+    h2{ font-size:clamp(24px,6.5vw,34px) !important; }
+    h3{ font-size:clamp(22px,5.5vw,32px) !important; }
+    span[style*="font-size: 58px"]{ font-size:40px !important; }
+    div[style*="justify-content: space-between"]{ flex-wrap:wrap !important; gap:14px; }
+    div[style*="gap: 40px"]{ flex-wrap:wrap !important; gap:14px !important; }
+    div[style*="gap: 34px"]{ order:3 !important; flex-basis:100% !important; justify-content:center !important; flex-wrap:wrap !important; gap:16px 18px !important; }
+  }
+  @media (max-width: 560px){
+    div[style*="max-width: 1280px"]{ padding-top:48px !important; padding-bottom:48px !important; }
+    a[style*="gap: 50px"]{ gap:24px !important; }
+  }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="background:#FFFFFF;font-family:Inter,system-ui,sans-serif;color:#111827;">
+
+  <!-- NAV -->
+  <div data-navbar="1" style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid #EEF1F4;transition:transform .3s ease;">
+    <div style="max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;gap:40px;">
+      <a href="index.html" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.14em;color:#062654;text-decoration:none;white-space:nowrap;">CHAU VU</a>
+      <div class="bm-navlinks" style="flex:1;display:flex;justify-content:center;gap:34px;">
+        <a href="index.html#work" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#062654;text-decoration:none;border-bottom:2px solid #062654;padding-bottom:3px;">WORK</a>
+        <a href="index.html#services" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#8B93A1;text-decoration:none;" style-hover="color:#062654;">SERVICES</a>
+        <a href="index.html#insights" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#8B93A1;text-decoration:none;" style-hover="color:#062654;">ABOUT ME</a>
+        <a href="index.html#contact" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#8B93A1;text-decoration:none;" style-hover="color:#062654;">CONTACT</a>
+      </div>
+      <a class="bm-cta bm-navcta" href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#fff;background:#062654;border-radius:2px;padding:11px 20px;text-decoration:none;white-space:nowrap;transition:all .15s;" style-hover="background:#14457A;">LET'S BUILD</a>
+      <button class="bm-burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <div class="bm-overlay" data-overlay>
+    <button data-overlay-close aria-label="Close menu" style="position:absolute;top:22px;right:26px;width:44px;height:44px;background:none;border:none;color:#fff;font-size:32px;line-height:1;cursor:pointer;">&times;</button>
+    <a class="bm-ov-link" data-overlay-link href="index.html#work">WORK</a>
+    <a class="bm-ov-link" data-overlay-link href="index.html#services">SERVICES</a>
+    <a class="bm-ov-link" data-overlay-link href="index.html#insights">ABOUT ME</a>
+    <a class="bm-ov-link" data-overlay-link href="index.html#contact">CONTACT</a>
+    <a data-overlay-link href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="margin-top:16px;font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:15px 30px;text-decoration:none;">LET'S BUILD</a>
+  </div>
+
+  <!-- HERO (NAVY) -->
+  <div style="position:relative;background-color:#062654;background-image:linear-gradient(rgba(6,38,84,0.90),rgba(6,38,84,0.82)),url('https://images.unsplash.com/photo-1644088379091-d574269d422f?auto=format&amp;fit=crop&amp;w=2000&amp;q=70');background-size:cover;background-position:center;">
+    <div style="max-width:1280px;margin:0 auto;padding:48px 40px 70px;min-height:92vh;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#9DB2D6;margin-bottom:44px;">WORK&nbsp;&nbsp;/&nbsp;&nbsp;PROJECTS&nbsp;&nbsp;/&nbsp;&nbsp;SOFTFAIR MODULES</div>
+      <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:start;">
+        <div>
+          <span style="display:inline-block;font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.35);border-radius:3px;padding:7px 12px;margin-bottom:28px;">Product Engineering</span>
+          <h1 style="margin:0 0 26px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:48px;line-height:1.04;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;">softfair: Insurance Comparison Modules &amp; Design System</h1><p style="margin:0;font-family:Inter,sans-serif;font-size:16px;line-height:1.65;color:#9DB2D6;max-width:480px;">Delivering features across multiple insurance modules — building the shared design system that keeps them consistent, redesigning core workflows like the eVB search end-to-end, and shipping AI-powered features like the profession search.</p>
+          
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px 24px;padding-top:8px;">
+          <div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#6E89B5;margin-bottom:10px;">CLIENT</div><div style="font-family:Inter,sans-serif;font-size:14px;color:#fff;">softfair GmbH</div></div>
+          <div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#6E89B5;margin-bottom:10px;">ROLE</div><div style="font-family:Inter,sans-serif;font-size:14px;color:#fff;">Software Engineer (Frontend &amp; Design System)</div></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;margin-top:54px;flex-wrap:wrap;">
+        <a class="bm-hcard" href="#track-01" style="display:flex;flex-direction:column;gap:8px;flex:1;min-width:280px;border:1px solid rgba(255,255,255,0.18);border-radius:4px;padding:22px 26px;text-decoration:none;transition:all .15s;" style-hover="border-color:rgba(255,255,255,0.5);">
+          <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#4FBDB4;">CASE STUDY 01 — PRODUCT ENGINEERING</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;">Modules &amp; Design System</span>
+        </a>
+        <a class="bm-hcard" href="#track-02" style="display:flex;flex-direction:column;gap:8px;flex:1;min-width:280px;border:1px solid rgba(255,255,255,0.18);border-radius:4px;padding:22px 26px;text-decoration:none;transition:all .15s;" style-hover="border-color:rgba(255,255,255,0.5);">
+          <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#4FBDB4;">CASE STUDY 02 — AI</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;">AI Profession Search</span>
+        </a>
+        <a class="bm-hcard" href="#track-03" style="display:flex;flex-direction:column;gap:8px;flex:1;min-width:280px;border:1px solid rgba(255,255,255,0.18);border-radius:4px;padding:22px 26px;text-decoration:none;transition:all .15s;" style-hover="border-color:rgba(255,255,255,0.5);">
+          <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#4FBDB4;">CASE STUDY 03 — REDESIGN</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;">eVB-Suche Redesign</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TRACK 01 — MODULES & DESIGN SYSTEM ============ -->
+  <div id="track-01" style="background:#fff;border-bottom:1px solid #EEF1F4;scroll-margin-top:80px;">
+    <div style="max-width:1280px;margin:0 auto;padding:70px 40px 0;">
+      <div style="display:flex;align-items:baseline;gap:20px;border-bottom:1px solid #EEF1F4;padding-bottom:30px;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:58px;line-height:1;color:#E1E6ED;">01</span>
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.2em;color:#14746F;margin-bottom:8px;">PRODUCT ENGINEERING</div>
+          <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.01em;color:#062654;">Insurance Modules &amp; Design System</h2>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;color:#8B93A1;margin-top:8px;">Angular · TypeScript · Storybook · .NET</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 01 · CHALLENGE -->
+    <div style="background:#F8F8F6;background-image:linear-gradient(#EBEEF3 1px,transparent 1px),linear-gradient(90deg,#EBEEF3 1px,transparent 1px);background-size:40px 40px;border-bottom:1px solid #EEF1F4;margin-top:0;">
+      <div style="max-width:1280px;margin:0 auto;padding:70px 40px;display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;"><span style="width:24px;height:1px;background:#062654;"></span><span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.18em;color:#062654;">THE CHALLENGE</span></div>
+          <h3 style="margin:0 0 26px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;line-height:1.1;letter-spacing:-0.01em;color:#062654;">A growing platform, a fragmented UI, brokers losing time</h3>
+          <p style="margin:0 0 34px;font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#5F6673;">Across softfair's insurance modules — KFZ, Leben, KV and other Modules — each was built with its own one-off components. The result: slower features, an inconsistent broker experience, and daily workflows full of friction — repetitive data entry, clunky flows, and no real visibility into how features were used.</p>
+          <div style="background:#fff;border:1px solid #E1E6ED;border-radius:4px;padding:26px 28px;">
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:16px;">IMPACT AT A GLANCE</div>
+            <div style="display:flex;gap:28px;flex-wrap:wrap;">
+              <div><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#14746F;">200+</div><div style="font-family:Inter,sans-serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#5F6673;margin-top:8px;">Features shipped</div></div>
+              <div><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#14746F;">50+</div><div style="font-family:Inter,sans-serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#5F6673;margin-top:8px;">Shared components</div></div>
+              <div><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:40px;line-height:1;color:#14746F;">5</div><div style="font-family:Inter,sans-serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#5F6673;margin-top:8px;">Modules</div></div>
+            </div>
+          </div>
+        </div>
+        <image-slot id="p2-t1-challenge" style="display:block;width:100%;height:430px;" shape="rounded" radius="6" placeholder="Drop module / component-library screenshot" src="https://softfair.one/wp-content/uploads/2023/03/kfz_mockup_impressionen.webp"></image-slot>
+      </div>
+    </div>
+
+    <!-- 01 · CONTRIBUTION -->
+    <div style="background:#fff;">
+      <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">MY CONTRIBUTION</div>
+        <h3 style="margin:0 0 50px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.01em;color:#062654;">Shipping features, then a system to ship them faster</h3>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+          <div style="padding-right:32px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">01</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Feature Delivery (KFZ)</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Owned KFZ workflow features end-to-end.</p>
+          </div>
+          <div style="padding-right:32px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">02</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Shared Design System</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Built 50+ shared, documented components.</p>
+          </div>
+          <div style="padding-right:32px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">03</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Full-Stack Features</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Shipped .NET PDF API and Angular UI.</p>
+          </div>
+          <div>
+            <div style="margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">04</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Analytics &amp; Research</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Usage tracking plus UX research and tests.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 01 · OUTCOME + FEATURES -->
+    <div style="background: #fff; border-bottom: 1px solid #EEF1F4; border-style: none">
+      <div style="max-width:1280px;margin:0 auto;padding:0 40px 74px;">
+        <div style="background:#062654;border-radius:6px;padding:40px 44px;margin-bottom:54px;">
+          <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#9DB2D6;margin-bottom:18px;">OUTCOME</div><p style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:23px;line-height:1.4;color:#fff;max-width:900px;">Features now sit on a shared component library with consistent behaviour and accessible defaults; and every meaningful interaction is tracked</p>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 01 · SPECS -->
+    <div style="background:#F8F8F6;border-bottom:1px solid #EEF1F4;">
+      <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:40px;">TECHNICAL SPECS</div>
+        <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;">
+          <div style="border:1px solid #E1E6ED;border-radius:4px;overflow:hidden;background:#fff;">
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Frontend</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">Angular · TypeScript · Angular Material · Tailwind · RxJS</div></div>
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Design System</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">Storybook · Design Tokens · component-driven development</div></div>
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Backend</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">.NET / C# (PDF print-engine API) · REST integration</div></div>
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Testing</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">Cypress · Playwright (E2E)</div></div>
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Modules</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">KFZ · Leben (LFG) · KV · AkquiseCenter</div></div>
+          </div>
+          <div style="border:1px solid #E1E6ED;border-radius:4px;padding:38px 32px;background:#fff;background-image:linear-gradient(#EBEEF3 1px,transparent 1px),linear-gradient(90deg,#EBEEF3 1px,transparent 1px);background-size:28px 28px;">
+            <div style="background:#062654;border-radius:3px;padding:13px 8px;text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#fff;margin-bottom:8px;">DESIGN SYSTEM · STORYBOOK · TOKENS</div>
+            <div style="text-align:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:11px;margin-bottom:4px;">reused by</div>
+            <div style="text-align:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:15px;line-height:1;margin-bottom:10px;">↓</div>
+            <div style="display:flex;gap:6px;margin-bottom:16px;">
+              <div style="flex:1;background:#fff;border:1px solid #C4CAD4;border-radius:3px;padding:10px 4px;text-align:center;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#062654;">KFZ</div>
+              <div style="flex:1;background:#fff;border:1px solid #C4CAD4;border-radius:3px;padding:10px 4px;text-align:center;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#062654;">LEBEN</div>
+              <div style="flex:1;background:#fff;border:1px solid #C4CAD4;border-radius:3px;padding:10px 4px;text-align:center;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#062654;">KV</div>
+              <div style="flex:1.4;background:#fff;border:1px solid #C4CAD4;border-radius:3px;padding:10px 4px;text-align:center;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#062654;">Other Modules</div>
+            </div>
+            <div style="text-align:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:15px;line-height:1;margin-bottom:10px;">↓</div>
+            <div style="display:flex;gap:6px;">
+              <div style="flex:1;background:#14746F;border-radius:3px;padding:10px 4px;text-align:center;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;color:#fff;">.NET PRINT-ENGINE API</div>
+              <div style="flex:1;background:#14746F;border-radius:3px;padding:10px 4px;text-align:center;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;color:#fff;">BIG-DATA TRACKING API</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TRACK 03 — AI PROFESSION SEARCH ============ -->
+  <div id="track-02" style="background:#fff;border-bottom:1px solid #EEF1F4;scroll-margin-top:80px;">
+    <div style="max-width:1280px;margin:0 auto;padding:70px 40px 0;">
+      <div style="display:flex;align-items:baseline;gap:20px;border-bottom:1px solid #EEF1F4;padding-bottom:30px;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:58px;line-height:1;color:#E1E6ED;">02</span>
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.2em;color:#14746F;margin-bottom:8px;">AI · LEBEN / RLV (WITH KRAKE BIG DATA)</div>
+          <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.01em;color:#062654;">AI-Powered Profession Search</h2>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;color:#8B93A1;margin-top:8px;">Angular · TypeScript · Vector-search integration</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 · CHALLENGE -->
+    <div style="background:#F8F8F6;background-image:linear-gradient(#EBEEF3 1px,transparent 1px),linear-gradient(90deg,#EBEEF3 1px,transparent 1px);background-size:40px 40px;border-bottom:1px solid #EEF1F4;">
+      <div style="max-width:1280px;margin:0 auto;padding:70px 40px;display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;"><span style="width:24px;height:1px;background:#062654;"></span><span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.18em;color:#062654;">THE CHALLENGE</span></div>
+          <h3 style="margin:0 0 26px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;line-height:1.1;letter-spacing:-0.01em;color:#062654;">The same profession, named differently by every insurer</h3>
+          <p style="margin:0 0 34px;font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#5F6673;">In life-insurance (RLV) quoting, each insurer keeps its own profession taxonomy — so a broker entering a client's job had to hunt through a separate list for <em>every</em> insurer and pick the closest match by hand. It was slow, repetitive and error-prone, and a wrong match meant a wrong quote.</p>
+          <div style="background:#fff;border:1px solid #E1E6ED;border-radius:4px;padding:26px 28px;">
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:16px;">IMPACT AT A GLANCE</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:28px;line-height:1.15;color:#14746F;margin-bottom:14px;">Type a job once → matched for every insurer</div>
+            <div style="font-family:Inter,sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#5F6673;line-height:1.5;">AI mapping replaces manual per-insurer lookup</div>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #E1E6ED;border-radius:6px;padding:40px 36px;background-image:linear-gradient(#EBEEF3 1px,transparent 1px),linear-gradient(90deg,#EBEEF3 1px,transparent 1px);background-size:28px 28px;align-self:stretch;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.16em;color:#8B93A1;margin-bottom:22px;">AI MATCHING FLOW</div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+            <div style="background:#fff;border:1.5px solid #062654;border-radius:6px;padding:14px 22px;font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#062654;">"Krankenpfleger"</div>
+            <div style="color:#8B93A1;font-family:'Space Mono',monospace;font-size:16px;line-height:1;">↓</div>
+            <div style="background:#062654;border-radius:6px;padding:13px 22px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.08em;color:#fff;display:flex;align-items:center;gap:10px;"><span style="font-size:9px;letter-spacing:0.12em;color:#4FBDB4;border:1px solid #4FBDB4;border-radius:3px;padding:3px 7px;">AI</span> SEMANTIC VECTOR SEARCH</div>
+            <div style="color:#8B93A1;font-family:'Space Mono',monospace;font-size:16px;line-height:1;">↓</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
+              <div style="background:#E2F6F4;border:1px solid #85D4CD;border-radius:4px;padding:9px 14px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:#0C6E68;">Insurer A ✓</div>
+              <div style="background:#E2F6F4;border:1px solid #85D4CD;border-radius:4px;padding:9px 14px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:#0C6E68;">Insurer B ✓</div>
+              <div style="background:#E2F6F4;border:1px solid #85D4CD;border-radius:4px;padding:9px 14px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:#0C6E68;">Insurer C ✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 · CONTRIBUTION -->
+    <div style="background:#fff;">
+      <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">MY CONTRIBUTION</div>
+        <h3 style="margin:0 0 50px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.01em;color:#062654;">Shipping AI matching with a UX brokers trust</h3>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;">
+          <div style="padding-right:28px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">01</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Search UI</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Built the autocomplete search and results UI.</p>
+          </div>
+          <div style="padding-right:28px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family: 'Space Mono',monospace; font-size: 13px; font-weight: 700; color: #8B93A1">02</span><span style="font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:0.12em;color:#14746F;border:1px solid #14746F;border-radius:3px;padding:3px 7px;">AI</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">AI Vector Search</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Mapped free-text to each insurer via AI.</p>
+          </div>
+          <div style="padding-right:28px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">03</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Relevance / Scoring UX</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Showed AI confidence as clear levels.</p>
+          </div>
+          <div style="padding-right:28px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">04</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Research-Driven Iteration</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Iterated straight from user interviews.</p>
+          </div>
+          <div>
+            <div style="margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">05</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Component Productization</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Shipped reusable RLV components.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:56px;display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+          <span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.18em;color:#062654;">PRODUCT SCREENS</span>
+          <span style="flex:1;height:1px;background:#D8DEE8;"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+          <figure style="margin:0;background:#fff;border:1px solid #E1E6ED;border-radius:6px;padding:14px;box-shadow:0 8px 30px rgba(6,38,84,0.08);">
+            <img src="assets/ai-search-results.png" alt="AI profession search — per-insurer results table with relevance levels" style="display:block;width:100%;height:auto;border-radius:3px;">
+            <figcaption style="margin:14px 4px 2px;font-family:Inter,sans-serif;font-size:13px;line-height:1.55;color:#8B93A1;">Per-insurer results with AI relevance levels (Hoch / Nicht gefunden) and review-and-correct fields.</figcaption>
+          </figure>
+          <figure style="margin:0;background:#fff;border:1px solid #E1E6ED;border-radius:6px;padding:14px;box-shadow:0 8px 30px rgba(6,38,84,0.08);">
+            <img src="assets/ai-search-dropdown.png" alt="AI profession search — autocomplete dropdown with matched professions" style="display:block;width:100%;height:auto;border-radius:3px;">
+            <figcaption style="margin:14px 4px 2px;font-family:Inter,sans-serif;font-size:13px;line-height:1.55;color:#8B93A1;">Free-text autocomplete and the per-insurer match picker, with a feedback prompt to tune results.</figcaption>
+          </figure>
+        </div>
+
+        <div style="margin-top:40px;display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+          <span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.18em;color:#062654;">WALKTHROUGH</span>
+          <span style="flex:1;height:1px;background:#D8DEE8;"></span>
+        </div>
+        <figure style="margin:0;max-width:520px;background:#062654;border:1px solid #E1E6ED;border-radius:6px;padding:0;overflow:hidden;">
+          <video id="ki-video" data-autoloop playsinline controls preload="auto" style="display:block;width:100%;height:auto;background:#062654;">
+            <source src="https://one.softfair-apps.de/wp-content/uploads/2025/04/softfair-Berufssuche-kennen-sie-schon-square-1-1-1080x1080-1.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <p style="margin:18px 0 0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#8B93A1;max-width:520px;">The AI profession search in action — type once, match across insurers.</p>
+      </div>
+    </div>
+
+    <!-- 03 · OUTCOME + FEATURES -->
+    <div style="background:#fff;border-bottom:1px solid #EEF1F4;">
+      <div style="max-width:1280px;margin:0 auto;padding:0 40px 74px;">
+        <div style="background:#062654;border-radius:6px;padding:40px 44px;margin-bottom:54px;">
+          <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#9DB2D6;margin-bottom:18px;">OUTCOME</div>
+          <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:23px;line-height:1.4;color:#fff;max-width:900px;">Type a profession once, get accurate AI suggestions across all insurers — less manual work, in a UX users actually understand because they helped shape it.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 · SPECS -->
+    <div style="background:#F8F8F6;border-bottom:1px solid #EEF1F4;">
+      <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:40px;">TECHNICAL SPECS</div>
+        <div style="border:1px solid #E1E6ED;border-radius:4px;overflow:hidden;background:#fff;max-width:760px;">
+          <div style="display:grid;grid-template-columns:1fr 1.8fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Frontend</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">Angular · TypeScript · Angular Material · RxJS</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1.8fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">AI</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">semantic vector-search integration (free-text → per-insurer profession match)</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1.8fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">UX</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">relevance-level scoring · research-driven iteration (user interviews)</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1.8fr;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Delivery</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">reusable RLV components · cross-team with KRAKE (Big Data)</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TRACK 02 — EVB-SUCHE REDESIGN ============ -->
+  <div id="track-03" style="background:#fff;border-bottom:1px solid #EEF1F4;scroll-margin-top:80px;">
+    <div style="max-width:1280px;margin:0 auto;padding:70px 40px 0;">
+      <div style="display:flex;align-items:baseline;gap:20px;border-bottom:1px solid #EEF1F4;padding-bottom:30px;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:58px;line-height:1;color:#E1E6ED;">03</span>
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.2em;color:#14746F;margin-bottom:8px;">REDESIGN · KFZ MODULE</div>
+          <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.01em;color:#062654;">eVB-Suche Redesign</h2>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;color:#8B93A1;margin-top:8px;">Angular · REST APIs · .NET (print engine) · End-to-end</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 · CHALLENGE + BEFORE/AFTER -->
+    <div style="background:#F8F8F6;background-image:linear-gradient(#EBEEF3 1px,transparent 1px),linear-gradient(90deg,#EBEEF3 1px,transparent 1px);background-size:40px 40px;border-bottom:1px solid #EEF1F4;">
+      <div style="max-width:1280px;margin:0 auto;padding:70px 40px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-bottom:48px;">
+          <div>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;"><span style="width:24px;height:1px;background:#062654;"></span><span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.18em;color:#062654;">THE CHALLENGE</span></div>
+            <h3 style="margin:0 0 26px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;line-height:1.1;letter-spacing:-0.01em;color:#062654;">A core broker task, buried in a clunky legacy search</h3>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#5F6673;">The eVB number is what a broker needs to register a vehicle — so finding one fast matters. But the legacy eVB search made it hard: results were thin and unclear, error messages from the API arrived split into confusing fragments, and there was no insight into how the feature was used. Insurers also needed a way for back-office staff to <em>research</em> eVB numbers without touching tariff settings — an access path that didn't exist yet.</p>
+          </div>
+          <div style="background:#fff;border:1px solid #E1E6ED;border-radius:4px;padding:26px 28px;align-self:start;">
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:16px;">IMPACT AT A GLANCE</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;line-height:1.15;color:#14746F;margin-bottom:14px;">Owned end-to-end</div>
+            <div style="font-family:Inter,sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#5F6673;line-height:1.5;">Concept → UI → API → AI-analyzed analytics · a build → measure → learn loop</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+          <span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.18em;color:#062654;">BEFORE → AFTER</span>
+          <span style="flex:1;height:1px;background:#D8DEE8;"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:stretch;">
+          <div style="background:#fff;border:1px dashed #C4CAD4;border-radius:6px;padding:30px 32px;">
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.16em;color:#8B93A1;margin-bottom:20px;">BEFORE · LEGACY SEARCH</div>
+            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;">
+              <li style="display:flex;gap:12px;font-family:Inter,sans-serif;font-size:14px;line-height:1.5;color:#5F6673;"><span style="color:#C0563E;font-family:'Space Mono',monospace;">×</span> Thin, unclear result data</li>
+              <li style="display:flex;gap:12px;font-family:Inter,sans-serif;font-size:14px;line-height:1.5;color:#5F6673;"><span style="color:#C0563E;font-family:'Space Mono',monospace;">×</span> Error messages split into confusing fragments</li>
+              <li style="display:flex;gap:12px;font-family:Inter,sans-serif;font-size:14px;line-height:1.5;color:#5F6673;"><span style="color:#C0563E;font-family:'Space Mono',monospace;">×</span> No usage analytics</li>
+              <li style="display:flex;gap:12px;font-family:Inter,sans-serif;font-size:14px;line-height:1.5;color:#5F6673;"><span style="color:#C0563E;font-family:'Space Mono',monospace;">×</span> No back-office research path</li>
+            </ul>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:24px;color:#14746F;">→</div>
+          <div style="background:#062654;border-radius:6px;padding:30px 32px;">
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.16em;color:#4FBDB4;margin-bottom:20px;">AFTER · REDESIGNED</div>
+            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;">
+              <li style="display:flex;gap:12px;font-family:Inter,sans-serif;font-size:14px;line-height:1.5;color:#E4ECF7;"><span style="color:#4FBDB4;font-family:'Space Mono',monospace;">✓</span> Rich result list + document re-download</li>
+              <li style="display:flex;gap:12px;font-family:Inter,sans-serif;font-size:14px;line-height:1.5;color:#E4ECF7;"><span style="color:#4FBDB4;font-family:'Space Mono',monospace;">✓</span> Quick &amp; detail search modes</li>
+              <li style="display:flex;gap:12px;font-family:Inter,sans-serif;font-size:14px;line-height:1.5;color:#E4ECF7;"><span style="color:#4FBDB4;font-family:'Space Mono',monospace;">✓</span> AI-analyzed usage (quick vs. detail)</li>
+              <li style="display:flex;gap:12px;font-family:Inter,sans-serif;font-size:14px;line-height:1.5;color:#E4ECF7;"><span style="color:#4FBDB4;font-family:'Space Mono',monospace;">✓</span> Permission-gated back-office entry point</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:40px;display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+          <span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.18em;color:#062654;">DESIGN EXPLORATIONS</span>
+          <span style="flex:1;height:1px;background:#D8DEE8;"></span>
+        </div>
+        <figure style="margin:0;background:#fff;border:1px solid #E1E6ED;border-radius:6px;padding:24px;display:flex;flex-direction:column;align-items:center;">
+          <img src="assets/evb-search-designs.png" alt="eVB-Suche design explorations: Schnellsuche dialog and Kunden-checkbox search variants" style="display:block;width:100%;height:auto;border-radius:3px;">
+          <figcaption style="margin-top:18px;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#8B93A1;text-align:center;max-width:640px;">Iterations of the eVB-Suche — from the Schnellsuche quick-search dialog to the detail-search variants with customer lookup.</figcaption>
+        </figure>
+
+        <div style="margin-top:40px;display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+          <span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.18em;color:#062654;">WALKTHROUGH</span>
+          <span style="flex:1;height:1px;background:#D8DEE8;"></span>
+        </div>
+        <figure style="margin:0;max-width:520px;background:#062654;border:1px solid #E1E6ED;border-radius:6px;padding:0;overflow:hidden;">
+          <video id="evb-video" data-autoloop playsinline controls preload="auto" style="display:block;width:100%;height:auto;background:#062654;">
+            <source src="assets/evb-nummer.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <p style="margin:18px 0 0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#8B93A1;max-width:520px;">The redesigned eVB-Suche in action — quick search to result.</p>
+      </div>
+    </div>
+
+    <!-- 02 · CONTRIBUTION -->
+    <div style="background:#fff;">
+      <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">MY CONTRIBUTION</div>
+        <h3 style="margin:0 0 50px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.01em;color:#062654;">From concept to AI-analyzed analytics — end to end</h3>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:44px 40px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">01</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">UX Concept</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Authored the faster-lookup redesign concept.</p>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">02</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">UI Rebuild</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Rebuilt results with quick and detail search.</p>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">03</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">API Integration</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Integrated the new REST result routes.</p>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">04</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Access &amp; Entry Points</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Added back-office and external entry points.</p>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#14746F;">05</span><span style="font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:0.12em;color:#14746F;border:1px solid #14746F;border-radius:3px;padding:3px 7px;">AI</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Measure With AI</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Tracked usage, analyzed it with AI.</p>
+          </div>
+          <div>
+            <div style="margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">06</span></div>
+            <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Fixes</div>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Fixed key bugs along the way.</p>
+          </div>
+        </div>
+        <div style="margin-top:40px;background:#F5F7FA;border-left:3px solid #14746F;padding:20px 24px;">
+          <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.16em;color:#8B93A1;margin-bottom:8px;">CROSS-TEAM</div>
+          <p style="margin:0;font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#5F6673;">Partnered with backend on the group-wide <strong style="color:#062654;">permission model</strong> and the <strong style="color:#062654;">PDF print engine</strong> (results legend).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 · OUTCOME + FEATURES -->
+    <div style="background:#fff;border-bottom:1px solid #EEF1F4;">
+      <div style="max-width:1280px;margin:0 auto;padding:0 40px 74px;">
+        <div style="background:#062654;border-radius:6px;padding:40px 44px;margin-bottom:54px;">
+          <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#9DB2D6;margin-bottom:18px;">OUTCOME</div>
+          <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:23px;line-height:1.4;color:#fff;max-width:900px;">Brokers find an eVB number faster, with a results list that tells them what they need and lets them re-download the document.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 · SPECS -->
+    <div style="background:#F8F8F6;border-bottom:1px solid #EEF1F4;">
+      <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:40px;">TECHNICAL SPECS</div>
+        <div style="border:1px solid #E1E6ED;border-radius:4px;overflow:hidden;background:#fff;max-width:760px;">
+          <div style="display:grid;grid-template-columns:1fr 1.8fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Frontend</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">Angular · TypeScript · Angular Material · RxJS</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1.8fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">APIs</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">New REST routes for eVB results · external-launch entry point</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1.8fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Backend (cross-team)</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">.NET print engine (results legend) · group-wide permission model</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1.8fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Measurement</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">usage event tracking → AI-assisted analysis of search behaviour</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1.8fr;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Scope</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">UX concept · UI · API integration · access control · AI-analyzed analytics · bug-fixing</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MORE PROJECTS -->
+  <div style="background:#fff;border-bottom:1px solid #EEF1F4;">
+    <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:36px;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;letter-spacing:0.16em;color:#062654;">MORE PROJECTS</span>
+        <span style="flex:1;height:1px;background:#E1E6ED;"></span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <a class="bm-more" href="kuehne-nagel.html" style="display:flex;justify-content:space-between;align-items:center;border:1px solid #E0E5EE;border-radius:4px;padding:26px 28px;text-decoration:none;transition:all .15s;">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#8B93A1;margin-bottom:10px;">PROJECT 01</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;color:#062654;">Kuehne &amp; Nagel</div>
+          </div>
+          <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;font-size:20px;color:#062654;">→</span>
+        </a>
+        <a class="bm-more" href="softfair-insight.html" style="display:flex;justify-content:space-between;align-items:center;border:1px solid #E0E5EE;border-radius:4px;padding:26px 28px;text-decoration:none;transition:all .15s;">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#8B93A1;margin-bottom:10px;">PROJECT 03</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;color:#062654;">Softfair - Insight</div>
+          </div>
+          <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;font-size:20px;color:#062654;">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div id="project-cta" style="position:relative;background:#062654;overflow:hidden;">
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:64px 40px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;">
+      <div>
+        <h2 style="margin:0 0 18px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:38px;line-height:1.05;letter-spacing:-0.01em;text-transform:uppercase;color:#fff;">Let's build something that lasts.</h2>
+        <p style="margin:0 0 24px;font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#9DB2D6;max-width:420px;">Got a platform that's grown faster than its UI, or a core workflow buried in legacy screens? That's exactly what I fix.</p>
+        <div style="display:flex;gap:30px;">
+          <div style="display:flex;align-items:center;gap:10px;font-family:Inter,sans-serif;font-size:13px;color:#fff;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-size:11px;">✉</span> chauvu8080@gmail.com</div>
+          <div style="display:flex;align-items:center;gap:10px;font-family:Inter,sans-serif;font-size:13px;color:#fff;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-size:11px;">☎</span> +49 179 4195 394</div>
+          <a href="https://www.linkedin.com/in/chau-vu-18031997/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;font-family:Inter,sans-serif;font-size:13px;color:#fff;text-decoration:none;" style-hover="color:#4FBDB4;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-family:Inter,sans-serif;font-weight:700;font-size:10px;">in</span> LinkedIn</a>
+        </div>
+      </div>
+      <a class="bm-cta-start" href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="display:inline-flex;align-items:center;gap:50px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:17px 26px;text-decoration:none;white-space:nowrap;transition:all .15s;" style-hover="background:#85D4CD;">LET'S START A PROJECT <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.14);">
+      <div style="max-width:1280px;margin:0 auto;padding:22px 40px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;">© 2026 CHAU VU. ALL RIGHTS RESERVED. · HAMBURG, GERMANY</span>
+        <div style="display:flex;gap:28px;">
+          <a href="https://www.linkedin.com/in/chau-vu-18031997/" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;text-decoration:none;" style-hover="color:#fff;">LINKEDIN</a>
+          <a href="#" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;text-decoration:none;" style-hover="color:#fff;">IMPRINT</a>
+          <a href="#" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;text-decoration:none;" style-hover="color:#fff;">PRIVACY</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+  componentDidMount() {
+    const burger = document.querySelector('.bm-burger');
+    const overlay = document.querySelector('[data-overlay]');
+    if (burger && overlay) {
+      burger.addEventListener('click', () => overlay.classList.add('open'));
+      overlay.querySelectorAll('[data-overlay-close],[data-overlay-link]').forEach(el =>
+        el.addEventListener('click', () => overlay.classList.remove('open')));
+    }
+    document.querySelectorAll('video').forEach((v) => { v.controls = true; });
+    const nav = document.querySelector('[data-navbar]');
+    if (!nav) return;
+    let lastY = window.scrollY;
+    this._onScroll = () => {
+      const y = window.scrollY;
+      if (y <= 10 || y > lastY) nav.style.transform = 'translateY(0)';
+      else if (y < lastY) nav.style.transform = 'translateY(-100%)';
+      lastY = y;
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+  }
+  componentWillUnmount() { if (this._onScroll) window.removeEventListener('scroll', this._onScroll); }
+}
+</script>
+</body>
+</html>

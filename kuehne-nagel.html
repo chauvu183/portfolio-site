@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#062654"/><text x="50" y="50" dy="0.35em" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="32" fill="#ffffff" letter-spacing="2">CV</text></svg></template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#F1F3F7}
+  a{color:inherit}
+  a.bm-obtn:hover{background:#EEF1F4 !important;color:#062654 !important;border-color:#062654 !important;}
+  .bm-arrow{display:inline-block;transition:transform .18s ease;}
+  a:hover .bm-arrow,button:hover .bm-arrow{transform:translateX(6px);}
+  a.bm-more:hover{border-color:#062654 !important;background:#F8F8F6 !important;}
+  a.bm-cta:hover{background:#14457A !important;}
+  a.bm-cta-start:hover{background:#85D4CD !important;}
+  /* ---- MOBILE NAV (overlay) ---- */
+  .bm-burger{display:none;border:none;background:none;cursor:pointer;padding:0;width:44px;height:44px;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+  .bm-burger span{display:block;width:22px;height:2px;background:#062654;border-radius:2px;}
+  .bm-overlay{position:fixed;inset:0;z-index:200;background:#062654;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;transform:translateY(-100%);visibility:hidden;transition:transform .42s cubic-bezier(.4,0,.2,1),visibility .42s;}
+  .bm-overlay.open{transform:translateY(0);visibility:visible;}
+  .bm-overlay > *{opacity:0;transition:opacity .35s ease;}
+  .bm-overlay.open > *{opacity:1;}
+  .bm-overlay.open > *:nth-child(2){transition-delay:.14s;}
+  .bm-overlay.open > *:nth-child(3){transition-delay:.20s;}
+  .bm-overlay.open > *:nth-child(4){transition-delay:.26s;}
+  .bm-overlay.open > *:nth-child(5){transition-delay:.32s;}
+  .bm-overlay.open > *:nth-child(6){transition-delay:.38s;}
+  .bm-ov-link{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;letter-spacing:0.02em;color:#fff;text-decoration:none;transition:color .15s,opacity .35s ease;}
+  .bm-ov-link:hover{color:#4FBDB4;}
+  @media (max-width:760px){
+    .bm-navlinks{display:none !important;}
+    .bm-navcta{display:none !important;}
+    .bm-burger{display:flex;margin-left:auto;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    div[style*="grid-template-columns"]{ grid-template-columns:1fr !important; }
+    div[style*="max-width: 1280px"]{ padding-left:22px !important; padding-right:22px !important; }
+    h1{ font-size:clamp(32px,9vw,48px) !important; line-height:1.04 !important; }
+    h2{ font-size:clamp(24px,6.5vw,34px) !important; }
+    h3{ font-size:clamp(22px,5.5vw,32px) !important; }
+    span[style*="font-size: 58px"]{ font-size:40px !important; }
+    div[style*="justify-content: space-between"]{ flex-wrap:wrap !important; gap:14px; }
+    div[style*="gap: 40px"]{ flex-wrap:wrap !important; gap:14px !important; }
+    div[style*="gap: 34px"]{ order:3 !important; flex-basis:100% !important; justify-content:center !important; flex-wrap:wrap !important; gap:16px 18px !important; }
+  }
+  @media (max-width: 560px){
+    div[style*="max-width: 1280px"]{ padding-top:48px !important; padding-bottom:48px !important; }
+    a[style*="gap: 50px"]{ gap:24px !important; }
+  }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="background:#FFFFFF;font-family:Inter,system-ui,sans-serif;color:#111827;">
+
+  <!-- NAV -->
+  <div data-navbar="1" style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid #EEF1F4;transition:transform .3s ease;">
+    <div style="max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;gap:40px;">
+      <a href="index.html" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.14em;color:#062654;text-decoration:none;white-space:nowrap;">CHAU VU</a>
+      <div class="bm-navlinks" style="flex:1;display:flex;justify-content:center;gap:34px;">
+        <a href="index.html#work" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#062654;text-decoration:none;border-bottom:2px solid #062654;padding-bottom:3px;">WORK</a>
+        <a href="index.html#services" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#8B93A1;text-decoration:none;" style-hover="color:#062654;">SERVICES</a>
+        <a href="index.html#insights" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#8B93A1;text-decoration:none;" style-hover="color:#062654;">ABOUT ME</a>
+        <a href="index.html#contact" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#8B93A1;text-decoration:none;" style-hover="color:#062654;">CONTACT</a>
+      </div>
+      <a class="bm-cta bm-navcta" href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#fff;background:#062654;border-radius:2px;padding:11px 20px;text-decoration:none;white-space:nowrap;transition:all .15s;" style-hover="background:#14457A;">LET'S BUILD</a>
+      <button class="bm-burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <div class="bm-overlay" data-overlay>
+    <button data-overlay-close aria-label="Close menu" style="position:absolute;top:22px;right:26px;width:44px;height:44px;background:none;border:none;color:#fff;font-size:32px;line-height:1;cursor:pointer;">&times;</button>
+    <a class="bm-ov-link" data-overlay-link href="index.html#work">WORK</a>
+    <a class="bm-ov-link" data-overlay-link href="index.html#services">SERVICES</a>
+    <a class="bm-ov-link" data-overlay-link href="index.html#insights">ABOUT ME</a>
+    <a class="bm-ov-link" data-overlay-link href="index.html#contact">CONTACT</a>
+    <a data-overlay-link href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="margin-top:16px;font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:15px 30px;text-decoration:none;">LET'S BUILD</a>
+  </div>
+
+  <!-- HERO (NAVY) -->
+  <div style="position:relative;background-color:#062654;background-image:linear-gradient(rgba(6,38,84,0.90),rgba(6,38,84,0.82)),url('assets/jupiter.jpg');background-size:cover;background-position:center;">
+    <div style="max-width:1280px;margin:0 auto;padding:48px 40px 70px;min-height:92vh;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#9DB2D6;margin-bottom:44px;">WORK&nbsp;&nbsp;/&nbsp;&nbsp;PROJECTS&nbsp;&nbsp;/&nbsp;&nbsp;JUPITER</div>
+      <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:start;">
+        <div>
+          <span style="display:inline-block;font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.35);border-radius:3px;padding:7px 12px;margin-bottom:28px;">Enterprise Platform</span>
+          <h1 style="margin:0 0 26px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:54px;line-height:1.02;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;">Jupiter: Enterprise Logistics Monitoring</h1>
+          <p style="margin:0;font-family:Inter,sans-serif;font-size:16px;line-height:1.65;color:#9DB2D6;max-width:460px;">Real-time visibility into cross-system EDI data flows at Kuehne + Nagel — so operations teams can find and fix stuck messages in minutes, not hours.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px 24px;padding-top:8px;">
+          <div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#6E89B5;margin-bottom:10px;">CLIENT</div><div style="font-family:Inter,sans-serif;font-size:14px;color:#fff;">Kuehne + Nagel</div></div>
+          <div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#6E89B5;margin-bottom:10px;">ROLE</div><div style="font-family:Inter,sans-serif;font-size:14px;color:#fff;">Software Engineer</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE CHALLENGE -->
+  <div style="background:#F8F8F6;background-image:linear-gradient(#EBEEF3 1px,transparent 1px),linear-gradient(90deg,#EBEEF3 1px,transparent 1px);background-size:40px 40px;border-bottom:1px solid #EEF1F4;">
+    <div style="max-width:1280px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;"><span style="width:24px;height:1px;background:#062654;"></span><span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.18em;color:#062654;">THE CHALLENGE</span></div>
+        <h2 style="margin:0 0 26px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:34px;line-height:1.1;letter-spacing:-0.01em;color:#062654;">A message fails — but where, across five systems?</h2>
+        <p style="margin:0 0 20px;font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#5F6673;">EDI business messages — purchase orders, shipment notices, status updates — travel through 5+ internal systems before they're done: IB (EDI gateway), KNMS (enterprise service bus), JMS (async messaging), MFT (file transfer) and XLOG (trip tracking).</p>
+        <p style="margin:0 0 34px;font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#5F6673;">When one stalled, operations teams had to chase logs across disparate tools to work out where and why it broke. Diagnosis was slow and error-prone, and a single stuck message could take hours to resolve.</p>
+        <div style="background:#fff;border:1px solid #E1E6ED;border-radius:4px;padding:26px 28px;">
+          <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.18em;color:#8B93A1;margin-bottom:16px;">IMPACT AT A GLANCE</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:42px;line-height:1;color:#14746F;margin-bottom:14px;">5+</div>
+          <div style="font-family:Inter,sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#5F6673;line-height:1.5;">Systems unified into one view</div>
+        </div>
+      </div>
+      <div style="position:relative;width:100%;max-width:480px;margin:0 auto;aspect-ratio:1;">
+        <svg viewBox="0 0 100 100" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;">
+          <defs>
+            <marker id="jflow" markerWidth="4.5" markerHeight="4.5" refX="2.25" refY="2.25" orient="auto"><path d="M0 0 L4.5 2.25 L0 4.5 Z" fill="#14746F"></path></marker>
+          </defs>
+          <g fill="none" stroke="#14746F" stroke-width="1.1" marker-end="url(#jflow)">
+            <path d="M68.5 17.96 A37 37 0 0 1 74.76 22.5"></path>
+            <path d="M86.19 57.69 A37 37 0 0 1 83.81 65.06"></path>
+            <path d="M53.87 86.81 A37 37 0 0 1 46.13 86.81"></path>
+            <path d="M16.19 65.06 A37 37 0 0 1 13.81 57.69"></path>
+            <path d="M25.24 22.5 A37 37 0 0 1 31.5 17.96"></path>
+          </g>
+        </svg>
+        <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30%;height:30%;border-radius:50%;background:#062654;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(6,38,84,0.25);">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17px;letter-spacing:0.02em;color:#fff;">JUPITER</span>
+          <span style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.18em;color:#4FBDB4;margin-top:3px;">MONITORING</span>
+        </div>
+        <div style="position:absolute;left:50%;top:13%;transform:translate(-50%,-50%);width:25%;height:25%;border-radius:50%;background:#fff;border:1.5px solid #062654;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:#062654;">IB</span>
+          <span style="font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.1em;color:#8B93A1;margin-top:2px;">EDI GATEWAY</span>
+        </div>
+        <div style="position:absolute;left:85%;top:39%;transform:translate(-50%,-50%);width:25%;height:25%;border-radius:50%;background:#fff;border:1.5px solid #062654;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:#062654;">KNMS</span>
+          <span style="font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.1em;color:#8B93A1;margin-top:2px;">ESB</span>
+        </div>
+        <div style="position:absolute;left:72%;top:80%;transform:translate(-50%,-50%);width:25%;height:25%;border-radius:50%;background:#fff;border:1.5px solid #062654;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:#062654;">JMS</span>
+          <span style="font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.1em;color:#8B93A1;margin-top:2px;">ASYNC MSG</span>
+        </div>
+        <div style="position:absolute;left:28%;top:80%;transform:translate(-50%,-50%);width:25%;height:25%;border-radius:50%;background:#fff;border:1.5px solid #062654;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:#062654;">MFT</span>
+          <span style="font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.1em;color:#8B93A1;margin-top:2px;">FILE TRANSFER</span>
+        </div>
+        <div style="position:absolute;left:15%;top:39%;transform:translate(-50%,-50%);width:25%;height:25%;border-radius:50%;background:#fff;border:1.5px solid #062654;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:#062654;">XLOG</span>
+          <span style="font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.1em;color:#8B93A1;margin-top:2px;">TRIP TRACKING</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUR APPROACH -->
+  <div style="background:#fff;">
+    <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+      <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">MY CONTRIBUTION</div>
+      <h2 style="margin:0 0 50px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:32px;letter-spacing:-0.01em;color:#062654;">Building the frontend that makes the flow visible</h2>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+        <div style="padding-right:32px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">01</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+          <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Component Architecture</div><p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Reusable Angular 13 + Material components.</p>
+          
+        </div>
+        <div style="padding-right:32px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">02</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+          <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Offline-First Dev</div>
+          <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Mocked backend so the UI runs solo.</p>
+        </div>
+        <div style="padding-right:32px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">03</span><span style="font-family:'Space Mono',monospace;font-size:18px;color:#062654;">→</span></div>
+          <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Graph Rendering</div>
+          <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Turned node/edge data into a visual flow.</p>
+        </div>
+        <div>
+          <div style="margin-bottom:20px;"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#8B93A1;">04</span></div>
+          <div style="font-family:Inter,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#111827;margin-bottom:12px;">Domain Modeling</div>
+          <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;line-height:1.6;color:#5F6673;">Modeled EDI logistics data in the UI.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOLUTION OVERVIEW -->
+  <div style="background:#fff;border-bottom:1px solid #EEF1F4;">
+    <div style="max-width:1280px;margin:0 auto;padding:74px 40px;display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:center;">
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:18px;">SOLUTION OVERVIEW</div>
+        <h2 style="margin:0 0 26px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:34px;line-height:1.1;letter-spacing:-0.01em;color:#062654;">One timeline for a message's entire journey</h2>
+        <p style="margin:0 0 28px;font-family:Inter,sans-serif;font-size:15px;line-height:1.7;color:#5F6673;">Jupiter turns opaque, multi-system failures into a single readable flow. Each node is a system, each step a hop — with status, payload and file details a click away. From one screen, ops teams detect a failure, diagnose its root cause, and reprocess the stuck message.</p>
+        <div style="display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#8B93A1;"><span style="width: 24px; height: 1px; background: rgb(196, 202, 212);"></span>Internal enterprise tool</div>
+      </div>
+      <image-slot id="proj-solution" style="display:block;width:100%;height:380px;" shape="rounded" radius="6" placeholder="Drop product mockup" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&amp;fit=crop&amp;w=1400&amp;q=70"></image-slot>
+    </div>
+  </div>
+
+  <!-- TECHNICAL SPECS -->
+  <div style="background:#fff;border-bottom:1px solid #EEF1F4;">
+    <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+      <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#8B93A1;margin-bottom:40px;">TECHNICAL SPECS</div>
+      <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;">
+        <div style="border:1px solid #E1E6ED;border-radius:4px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Frontend</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">Angular 13 · TypeScript · Angular Material · RxJS · SVG</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Backend</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">Spring Boot / Java (REST)</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Database</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">PostgreSQL</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Infrastructure</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">OpenShift</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid #EEF1F4;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Integrations</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">IB · KNMS · JMS · MFT · XLOG</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1.4fr;"><div style="padding:14px 18px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#111827;background:#F8F8F6;border-right:1px solid #EEF1F4;">Deployment</div><div style="padding:14px 18px;font-family:'Space Mono',monospace;font-size:13px;color:#5F6673;">Jenkins CI/CD</div></div>
+        </div>
+
+        <div style="border:1px solid #E1E6ED;border-radius:4px;padding:38px 32px;background:#F8F8F6;background-image:linear-gradient(#EBEEF3 1px,transparent 1px),linear-gradient(90deg,#EBEEF3 1px,transparent 1px);background-size:28px 28px;">
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="background:#062654;border-radius:3px;padding:12px 8px;text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#fff;">ANGULAR CLIENT · JUPITER UI</div>
+            <div style="text-align:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:15px;line-height:1;">↓</div>
+            <div style="background:#fff;border:1px dashed #93AECF;border-radius:3px;padding:12px 8px;text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#062654;">BACKEND API</div>
+            <div style="text-align:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:15px;line-height:1;">↓</div>
+            <div style="display:flex;align-items:stretch;gap:6px;">
+              <div style="flex:1;background:#fff;border:1px solid #C4CAD4;border-radius:3px;padding:10px 4px;text-align:center;"><div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:#062654;">IB</div><div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.04em;color:#8B93A1;margin-top:3px;">GATEWAY</div></div>
+              <div style="display:flex;align-items:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:12px;">→</div>
+              <div style="flex:1;background:#fff;border:1px solid #C4CAD4;border-radius:3px;padding:10px 4px;text-align:center;"><div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:#062654;">KNMS</div><div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.04em;color:#8B93A1;margin-top:3px;">ESB</div></div>
+              <div style="display:flex;align-items:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:12px;">→</div>
+              <div style="flex:1;background:#fff;border:1px solid #C4CAD4;border-radius:3px;padding:10px 4px;text-align:center;"><div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:#062654;">JMS</div><div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.04em;color:#8B93A1;margin-top:3px;">ASYNC</div></div>
+              <div style="display:flex;align-items:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:12px;">→</div>
+              <div style="flex:1;background:#fff;border:1px solid #C4CAD4;border-radius:3px;padding:10px 4px;text-align:center;"><div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:#062654;">MFT</div><div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.04em;color:#8B93A1;margin-top:3px;">FILE</div></div>
+              <div style="display:flex;align-items:center;color:#8B93A1;font-family:'Space Mono',monospace;font-size:12px;">→</div>
+              <div style="flex: 1; border-radius: 3px; padding: 10px 4px; text-align: center; background-color: #ffffff; border-width: 1px; border-style: solid; border-color: #C4CAD4"><div style="font-family: 'Space Mono',monospace; font-size: 11px; font-weight: 700; color: #062654">XLOG</div><div style="font-family: 'Space Mono',monospace; font-size: 8px; letter-spacing: 0.04em; color: #8B93A1; margin-top: 3px">TRIP</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MORE PROJECTS -->
+  <div style="background:#fff;border-bottom:1px solid #EEF1F4;">
+    <div style="max-width:1280px;margin:0 auto;padding:74px 40px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:36px;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;letter-spacing:0.16em;color:#062654;">MORE PROJECTS</span>
+        <span style="flex:1;height:1px;background:#E1E6ED;"></span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <a class="bm-more" href="softfair-modules.html" style="display:flex;justify-content:space-between;align-items:center;border:1px solid #E0E5EE;border-radius:4px;padding:26px 28px;text-decoration:none;transition:all .15s;">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#8B93A1;margin-bottom:10px;">PROJECT 02</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;color:#062654;">Softfair - Modules</div>
+          </div>
+          <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;font-size:20px;color:#062654;">→</span>
+        </a>
+        <a class="bm-more" href="softfair-insight.html" style="display:flex;justify-content:space-between;align-items:center;border:1px solid #E0E5EE;border-radius:4px;padding:26px 28px;text-decoration:none;transition:all .15s;">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#8B93A1;margin-bottom:10px;">PROJECT 03</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;color:#062654;">Softfair - Insight</div>
+          </div>
+          <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;font-size:20px;color:#062654;">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div id="project-cta" style="position:relative;background:#062654;overflow:hidden;">
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:64px 40px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;">
+      <div>
+        <h2 style="margin:0 0 18px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:38px;line-height:1.05;letter-spacing:-0.01em;text-transform:uppercase;color:#fff;">Let's build something that lasts.</h2>
+        <p style="margin:0 0 24px;font-family:Inter,sans-serif;font-size:14px;line-height:1.6;color:#9DB2D6;max-width:380px;">Have a complex, multi-system product to make legible? Let's talk.</p>
+        <div style="display:flex;gap:30px;">
+          <div style="display:flex;align-items:center;gap:10px;font-family:Inter,sans-serif;font-size:13px;color:#fff;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-size:11px;">✉</span> chauvu8080@gmail.com</div>
+          <div style="display:flex;align-items:center;gap:10px;font-family:Inter,sans-serif;font-size:13px;color:#fff;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-size:11px;">☎</span> +49 179 4195 394</div>
+          <a href="https://www.linkedin.com/in/chau-vu-18031997/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;font-family:Inter,sans-serif;font-size:13px;color:#fff;text-decoration:none;" style-hover="color:#4FBDB4;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-family:Inter,sans-serif;font-weight:700;font-size:10px;">in</span> LinkedIn</a>
+        </div>
+      </div>
+      <a class="bm-cta-start" href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="display:inline-flex;align-items:center;gap:50px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:17px 26px;text-decoration:none;white-space:nowrap;transition:all .15s;" style-hover="background:#85D4CD;">LET'S START A PROJECT <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.14);">
+      <div style="max-width:1280px;margin:0 auto;padding:22px 40px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;">© 2026 CHAU VU. ALL RIGHTS RESERVED. · HAMBURG, GERMANY</span>
+        <div style="display:flex;gap:28px;">
+          <a href="https://www.linkedin.com/in/chau-vu-18031997/" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;text-decoration:none;" style-hover="color:#fff;">LINKEDIN</a>
+          <a href="#" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;text-decoration:none;" style-hover="color:#fff;">IMPRINT</a>
+          <a href="#" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;text-decoration:none;" style-hover="color:#fff;">PRIVACY</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+  componentDidMount() {
+    const burger = document.querySelector('.bm-burger');
+    const overlay = document.querySelector('[data-overlay]');
+    if (burger && overlay) {
+      burger.addEventListener('click', () => overlay.classList.add('open'));
+      overlay.querySelectorAll('[data-overlay-close],[data-overlay-link]').forEach(el =>
+        el.addEventListener('click', () => overlay.classList.remove('open')));
+    }
+    const nav = document.querySelector('[data-navbar]');
+    if (!nav) return;
+    let lastY = window.scrollY;
+    this._onScroll = () => {
+      const y = window.scrollY;
+      if (y <= 10 || y > lastY) nav.style.transform = 'translateY(0)';
+      else if (y < lastY) nav.style.transform = 'translateY(-100%)';
+      lastY = y;
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+  }
+  componentWillUnmount() { if (this._onScroll) window.removeEventListener('scroll', this._onScroll); }
+}
+</script>
+</body>
+</html>
