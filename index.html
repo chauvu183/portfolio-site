@@ -26,10 +26,12 @@
   a.bm-cta:hover{background:#14457A !important;border-color:#14457A !important;}
   a.bm-cta-ed:hover{background:#85D4CD !important;}
   a.bm-cta-start:hover{background:#85D4CD !important;}
+  a.bm-crow:hover{padding-left:8px !important;}
+  a.bm-crow:hover .bm-arrow{transform:translateX(6px);}
   /* ---- MOBILE NAV (overlay) ---- */
   .bm-burger{display:none;border:none;background:none;cursor:pointer;padding:0;width:44px;height:44px;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
   .bm-burger span{display:block;width:22px;height:2px;background:#062654;border-radius:2px;}
-  .bm-overlay{position:fixed;inset:0;z-index:200;background:#062654;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;transform:translateY(-100%);visibility:hidden;transition:transform .42s cubic-bezier(.4,0,.2,1),visibility .42s;}
+  .bm-overlay{position:fixed;top:0;left:0;right:0;z-index:200;background:#062654;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:78px 24px 40px;transform:translateY(-100%);visibility:hidden;transition:transform .42s cubic-bezier(.4,0,.2,1),visibility .42s;}
   .bm-overlay.open{transform:translateY(0);visibility:visible;}
   .bm-overlay > *{opacity:0;transition:opacity .35s ease;}
   .bm-overlay.open > *{opacity:1;}
@@ -38,13 +40,13 @@
   .bm-overlay.open > *:nth-child(4){transition-delay:.26s;}
   .bm-overlay.open > *:nth-child(5){transition-delay:.32s;}
   .bm-overlay.open > *:nth-child(6){transition-delay:.38s;}
-  .bm-ov-link{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;letter-spacing:0.02em;color:#fff;text-decoration:none;transition:color .15s,opacity .35s ease;}
+  .bm-ov-link{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:23px;letter-spacing:0.02em;color:#fff;text-decoration:none;transition:color .15s,opacity .35s ease;}
   .bm-ov-link:hover{color:#4FBDB4;}
   @media (max-width:760px){
     .bm-navlinks{display:none !important;}
     .bm-navcta{display:none !important;}
     .bm-burger{display:flex;margin-left:auto;}
-    [data-navbar] > div{padding-top:10px !important;padding-bottom:10px !important;}
+    [data-navbar] > div[style*="max-width: 1280px"]{padding-top:10px !important;padding-bottom:10px !important;}
   }
 
   /* ---------- RESPONSIVE ---------- */
@@ -73,6 +75,11 @@
     div[style*="max-width: 1280px"]{ padding-top:48px !important; padding-bottom:48px !important; }
     /* drop the big in-text gaps used by some CTA/links */
     a[style*="gap: 50px"], a[style*="gap: 120px"], a[style*="gap: 40px"]{ gap:20px !important; }
+  }
+  /* ---- FOOTER bottom bar: stack copyright + links on narrow screens ---- */
+  @media (max-width: 640px){
+    .bm-footer-bar{ flex-direction:column !important; align-items:flex-start !important; gap:18px !important; padding-top:28px !important; padding-bottom:28px !important; }
+    .bm-footer-links{ gap:22px !important; }
   }
 </style>
 <script src="./image-slot.js"></script>
@@ -205,7 +212,7 @@
         <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;">
           <div>
             <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#4FBDB4;margin-bottom:20px;">PROJECT 02</div>
-            <h3 style="margin:0 0 22px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:48px;line-height:1.0;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;">Softfair — Insight</h3>
+            <h3 style="margin:0 0 22px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:48px;line-height:1.0;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;">Softfair — Insights</h3>
             <p style="margin:0 0 36px;font-family:Inter,sans-serif;font-size:16px;line-height:1.65;color:#9DB2D6;max-width:430px;">Data into real decisions — a Databricks analytics dashboard plus a ground-up Angular frontend rebuild.</p>
             <a href="softfair-insight.html" class="bm-cta-ed" style="display:inline-flex;align-items:center;gap:40px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:16px 28px;text-decoration:none;transition:all .15s;" style-hover="background:#85D4CD;">View Case Study <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
           </div>
@@ -333,24 +340,75 @@
 
   <!-- FOOTER CTA -->
   <div id="contact" style="scroll-margin-top:90px;position:relative;background:#062654;overflow:hidden;">
-    <div style="position:relative;max-width:1280px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1.3fr auto;gap:60px;align-items:center;">
-      <div>
-        <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#9DB2D6;margin-bottom:22px;">START A PROJECT</div>
-        <h2 style="margin:0 0 22px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1.05;letter-spacing:-0.01em;text-transform:uppercase;color:#fff;">Let's build something that lasts.</h2>
-        <p style="margin:0 0 30px;font-family:Inter,sans-serif;font-size:15px;line-height:1.6;color:#9DB2D6;max-width:420px;">Have a legacy system that needs a second life, or a new product to get right the first time? Let's talk.</p>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <div style="display:flex;align-items:center;gap:12px;font-family:Inter,sans-serif;font-size:14px;color:#fff;"><span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: #4FBDB4; color: #062654; border-radius: 3px; font-size: 15px">✉</span> chauvu8080@gmail.com</div>
-          <div style="display:flex;align-items:center;gap:12px;font-family:Inter,sans-serif;font-size:14px;color:#fff;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-size:11px;">☎</span> +49 179 4195 394</div>
-          <a href="https://www.linkedin.com/in/chau-vu-18031997/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;font-family:Inter,sans-serif;font-size:14px;color:#fff;text-decoration:none;" style-hover="color:#4FBDB4;"><span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: rgb(79, 189, 180); color: rgb(6, 38, 84); border-radius: 3px; font-family: Inter, sans-serif; font-weight: 700; font-size: 10px;">in</span>chau-vu</a>
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:80px 40px;">
+
+      <sc-if value="{{ contactSplit }}" hint-placeholder-val="{{ true }}">
+      <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:stretch;">
+        <div style="display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#9DB2D6;margin-bottom:22px;">START A PROJECT</div>
+          <h2 style="margin:0 0 22px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1.05;letter-spacing:-0.01em;text-transform:uppercase;color:#fff;">Let's build something that lasts.</h2>
+          <p style="margin:0 0 34px;font-family:Inter,sans-serif;font-size:15px;line-height:1.6;color:#9DB2D6;max-width:420px;">Have a legacy system that needs a second life, or a new product to get right the first time? Let's talk.</p>
+          <a class="bm-cta-start" href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="display:inline-flex;align-self:flex-start;align-items:center;gap:50px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:17px 26px;text-decoration:none;white-space:nowrap;transition:all .15s;" style-hover="background:#85D4CD;">LET'S START A PROJECT <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
+        </div>
+
+        <div style="display:flex;flex-direction:column;justify-content:center;">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px;">
+            <span style="width:28px;height:1px;background:#4FBDB4;"></span>
+            <span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.2em;color:#4FBDB4;">GET IN TOUCH</span>
+          </div>
+
+          <a class="bm-crow" href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="display:flex;align-items:center;gap:18px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.12);text-decoration:none;transition:padding-left .18s ease;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;background:#4FBDB4;color:#062654;border-radius:6px;font-size:21px;line-height:1;">✉</span>
+            <span style="flex:1;min-width:0;">
+              <span style="display:block;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#9DB2D6;margin-bottom:7px;">EMAIL</span>
+              <span style="display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;line-height:1.2;color:#fff;overflow-wrap:anywhere;">chauvu8080@gmail.com</span>
+            </span>
+            <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;font-size:16px;color:#4FBDB4;">→</span>
+          </a>
+
+          <a class="bm-crow" href="tel:+491794195394" style="display:flex;align-items:center;gap:18px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.12);text-decoration:none;transition:padding-left .18s ease;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;background:#4FBDB4;color:#062654;border-radius:6px;font-size:19px;line-height:1;">☎</span>
+            <span style="flex:1;min-width:0;">
+              <span style="display:block;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#9DB2D6;margin-bottom:7px;">PHONE</span>
+              <span style="display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;line-height:1.2;color:#fff;">+49 179 4195 394</span>
+            </span>
+            <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;font-size:16px;color:#4FBDB4;">→</span>
+          </a>
+
+          <a class="bm-crow" href="https://www.linkedin.com/in/chau-vu-18031997/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:18px;padding:24px 0;text-decoration:none;transition:padding-left .18s ease;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;background:#4FBDB4;color:#062654;border-radius:6px;font-family:Inter,sans-serif;font-weight:700;font-size:17px;line-height:1;">in</span>
+            <span style="flex:1;min-width:0;">
+              <span style="display:block;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;color:#9DB2D6;margin-bottom:7px;">LINKEDIN</span>
+              <span style="display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;line-height:1.2;color:#fff;">/chau-vu</span>
+            </span>
+            <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;font-size:16px;color:#4FBDB4;">→</span>
+          </a>
         </div>
       </div>
-      <a class="bm-cta-start" href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="display:inline-flex;align-items:center;gap:50px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:17px 26px;text-decoration:none;white-space:nowrap;transition:all .15s;" style-hover="background:#85D4CD;">LET'S START A PROJECT <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
+      </sc-if>
+
+      <sc-if value="{{ contactStandard }}">
+      <div style="display:grid;grid-template-columns:1.3fr auto;gap:60px;align-items:center;">
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#9DB2D6;margin-bottom:22px;">START A PROJECT</div>
+          <h2 style="margin:0 0 22px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1.05;letter-spacing:-0.01em;text-transform:uppercase;color:#fff;">Let's build something that lasts.</h2>
+          <p style="margin:0 0 30px;font-family:Inter,sans-serif;font-size:15px;line-height:1.6;color:#9DB2D6;max-width:420px;">Have a legacy system that needs a second life, or a new product to get right the first time? Let's talk.</p>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;align-items:center;gap:12px;font-family:Inter,sans-serif;font-size:14px;color:#fff;"><span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: #4FBDB4; color: #062654; border-radius: 3px; font-size: 15px">✉</span> chauvu8080@gmail.com</div>
+            <div style="display:flex;align-items:center;gap:12px;font-family:Inter,sans-serif;font-size:14px;color:#fff;"><span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#4FBDB4;color:#062654;border-radius:3px;font-size:11px;">☎</span> +49 179 4195 394</div>
+            <a href="https://www.linkedin.com/in/chau-vu-18031997/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;font-family:Inter,sans-serif;font-size:14px;color:#fff;text-decoration:none;" style-hover="color:#4FBDB4;"><span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: rgb(79, 189, 180); color: rgb(6, 38, 84); border-radius: 3px; font-family: Inter, sans-serif; font-weight: 700; font-size: 10px;">in</span>chau-vu</a>
+          </div>
+        </div>
+        <a class="bm-cta-start" href="mailto:chauvu8080@gmail.com?subject=Project%20inquiry" style="display:inline-flex;align-items:center;gap:50px;font-family:Inter,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#062654;background:#4FBDB4;border-radius:2px;padding:17px 26px;text-decoration:none;white-space:nowrap;transition:all .15s;" style-hover="background:#85D4CD;">LET'S START A PROJECT <span class="bm-arrow" style="display:inline-block;transition:transform .18s ease;font-family:'Space Mono',monospace;">→</span></a>
+      </div>
+      </sc-if>
+
     </div>
     </div>
     <div style="border-top:1px solid rgba(255,255,255,0.14);">
-      <div style="max-width:1280px;margin:0 auto;padding:22px 40px;display:flex;justify-content:space-between;align-items:center;">
+      <div class="bm-footer-bar" style="max-width:1280px;margin:0 auto;padding:22px 40px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
         <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;">© 2026 CHAU VU. ALL RIGHTS RESERVED. · HAMBURG, GERMANY</span>
-        <div style="display:flex;gap:28px;">
+        <div class="bm-footer-links" style="display:flex;gap:28px;flex-wrap:wrap;">
           <a href="https://www.linkedin.com/in/chau-vu-18031997/" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;text-decoration:none;" style-hover="color:#fff;">LINKEDIN</a>
           <a href="#" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;text-decoration:none;" style-hover="color:#fff;">IMPRINT</a>
           <a href="#" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#9DB2D6;text-decoration:none;" style-hover="color:#fff;">PRIVACY</a>
@@ -361,7 +419,7 @@
 
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;editorialLayout&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Selected Projects&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;editorialLayout&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Selected Projects&quot;},&quot;contactSplit&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contact / Footer&quot;}}">
 class Component extends DCLogic {
   componentDidMount() {
     const burger = document.querySelector('.bm-burger');
@@ -459,6 +517,8 @@ class Component extends DCLogic {
       standard: !editorial,
       projBg: editorial ? '#062654' : '#fff',
       headingColor: editorial ? '#FFFFFF' : '#062654',
+      contactSplit: !!this.props.contactSplit,
+      contactStandard: !this.props.contactSplit,
     };
   }
 }
