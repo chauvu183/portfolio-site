@@ -31,7 +31,7 @@
   /* ---- MOBILE NAV (overlay) ---- */
   .bm-burger{display:none;border:none;background:none;cursor:pointer;padding:0;width:44px;height:44px;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
   .bm-burger span{display:block;width:22px;height:2px;background:#062654;border-radius:2px;}
-  .bm-overlay{position:fixed;top:0;left:0;right:0;z-index:200;background:#062654;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:78px 24px 40px;transform:translateY(-100%);visibility:hidden;transition:transform .42s cubic-bezier(.4,0,.2,1),visibility .42s;}
+  .bm-overlay{position:fixed;inset:0;z-index:200;background:#062654;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;transform:translateY(-100%);visibility:hidden;transition:transform .42s cubic-bezier(.4,0,.2,1),visibility .42s;}
   .bm-overlay.open{transform:translateY(0);visibility:visible;}
   .bm-overlay > *{opacity:0;transition:opacity .35s ease;}
   .bm-overlay.open > *{opacity:1;}
@@ -40,7 +40,7 @@
   .bm-overlay.open > *:nth-child(4){transition-delay:.26s;}
   .bm-overlay.open > *:nth-child(5){transition-delay:.32s;}
   .bm-overlay.open > *:nth-child(6){transition-delay:.38s;}
-  .bm-ov-link{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:23px;letter-spacing:0.02em;color:#fff;text-decoration:none;transition:color .15s,opacity .35s ease;}
+  .bm-ov-link{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:30px;letter-spacing:0.02em;color:#fff;text-decoration:none;transition:color .15s,opacity .35s ease;}
   .bm-ov-link:hover{color:#4FBDB4;}
   @media (max-width:760px){
     .bm-navlinks{display:none !important;}
@@ -496,9 +496,28 @@ class Component extends DCLogic {
     update();
     };
     start();
+
+    // Arriving from another page with a #section hash: the DC streams in and
+    // images load after mount, so the browser's native jump misses. Re-align
+    // to the target a few times as layout settles.
+    if (location.hash && location.hash.length > 1) {
+      const goToHash = () => {
+        const el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (!el) return;
+        const y = el.getBoundingClientRect().top + window.scrollY - 84;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'instant' });
+      };
+      requestAnimationFrame(goToHash);
+      setTimeout(goToHash, 120);
+      setTimeout(goToHash, 400);
+      setTimeout(goToHash, 800);
+      window.addEventListener('load', goToHash);
+      this._goToHash = goToHash;
+    }
   }
 
   componentWillUnmount() {
+    if (this._goToHash) window.removeEventListener('load', this._goToHash);
     if (this._onScroll) {
       window.removeEventListener('scroll', this._onScroll);
       window.removeEventListener('resize', this._onScroll);
